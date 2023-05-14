@@ -83,14 +83,16 @@
 </div>
 <div class="row mt-3 mb-5">
     <div class="col-md-8 offset-md-4">
-        @if (Route::has('password.request'))
-            <span class="text-white">
-                {{ __('¿No estás registrado? ') }}
-            </span>
-        @endif
-        <button type="submit" class=" ms-3 btn btn-light text-morado fw-bold">
-            {{ __('Registrate') }}
-        </button>
+        <span class="text-white">
+            {{ __('¿No estás registrado? ') }}
+        </span>
+        @guest
+            @if (Route::has('register'))
+                <button type="submit" class=" ms-3 btn btn-light text-morado fw-bold">
+                    <a class="nav-link" href="{{ route('register') }}">{{ __('Registrate') }}</a>
+                 </button>
+            @endif
+        @endguest
     </div>
 </div>
 <br><br><br><br><br><br><br><br>
