@@ -178,9 +178,9 @@ p {
 
 .main-border-button a {
   font-size: 14px;
-  color: #ec6090;
+  color: #7A26C1;
   background-color: transparent;
-  border: 1px solid #ec6090;
+  border: 1px solid #7A26C1;
   padding: 12px 30px;
   display: inline-block;
   border-radius: 25px;
@@ -214,7 +214,7 @@ section {
 }
 
 .heading-section h4 {
-  color: #ec6090;
+  color: #7A26C1;
   font-size: 34px;
   text-decoration: none;
   margin-bottom: 30px;
@@ -223,7 +223,6 @@ section {
 .heading-section h4 em {
   color: #fff;
   font-style: normal;
-  text-decoration: underline;
 }
 
 /* 
@@ -368,6 +367,7 @@ Header Style
   min-height: 80px;
   background: transparent;
   display: flex;
+  justify-items: center;
   padding: 15px 0px;
   border-radius: 50px;
 }
@@ -830,7 +830,7 @@ Most Popular Style
 }
 
 .most-popular .item ul li:last-child i {
-  color: #ec6090;
+  color: #7A26C1;
 }
 
 .most-popular .main-button {
@@ -923,7 +923,7 @@ footer p a {
 }
 
 footer p a:hover {
-  color: #ec6090;
+  color: #7A26C1;
 }
 
 /* 
@@ -962,7 +962,7 @@ Featured Games Style
 .featured-games .item .thumb .hover-effect h6 {
   background-color: rgba(31,33,34,0.95);
   display: inline-block;
-  color: #ec6090;
+  color: #7A26C1;
   font-weight: 600;
   font-size: 14px;
   padding: 10px 20px;
@@ -1003,7 +1003,7 @@ Featured Games Style
 }
 
 .featured-games .item ul li:last-child i {
-  color: #ec6090;
+  color: #7A26C1;
 }
 
 .featured-games .owl-nav {
@@ -1033,7 +1033,7 @@ Featured Games Style
 .featured-games .owl-nav .owl-prev span:hover,
 .featured-games .owl-nav .owl-next span:hover {
   opacity: 1;
-  color: #ec6090;
+  color: #7A26C1;
 }
 
 .top-downloaded {
@@ -1083,7 +1083,7 @@ Featured Games Style
   height: 46px;
   text-align: center;
   line-height: 46px;
-  color: #ec6090;
+  color: #7A26C1;
   background-color: #27292a;
   border-radius: 50%;
 }
@@ -1100,7 +1100,7 @@ Featured Games Style
 
 .top-downloaded .text-button a {
   font-weight: 600;
-  color: #ec6090;
+  color: #7A26C1;
   font-size: 15px;
 }
 
@@ -1209,7 +1209,7 @@ Live Stream Style
 
 .live-stream span i {
   color: #fff;
-  background-color: #ec6090;
+  background-color: #7A26C1;
   border-radius: 50%;
   font-size: 12px;
   width: 20px;
@@ -1222,7 +1222,7 @@ Live Stream Style
 
 .live-stream span {
   font-size: 14px;
-  color: #ec6090;
+  color: #7A26C1;
 }
 
 .live-stream .down-content h4 {
@@ -1262,7 +1262,7 @@ Featured Banner Style
   display: inline-block;
   text-align: center;
   line-height: 46px;
-  color: #ec6090;
+  color: #7A26C1;
 }
 
 /* 
@@ -1322,7 +1322,7 @@ Game Details Style
 }
 
 .game-details .content .left-info ul li:last-child i {
-  color: #ec6090;
+  color: #7A26C1;
 }
 
 .game-details .content .right-info {
@@ -1350,7 +1350,7 @@ Game Details Style
 } 
 
 .game-details .content .right-info ul li i {
-  color: #ec6090;
+  color: #7A26C1;
 }
 
 .game-details .main-border-button {
@@ -1417,7 +1417,7 @@ Other Related Style
 }
 
 .other-games ul li:last-child i {
-  color: #ec6090;
+  color: #7A26C1;
 }
 
 /* 
@@ -1460,13 +1460,13 @@ Top Streamers Style
 .top-streamers ul li h6 {
   display: inline;
   font-size: 14px;
-  color: #ec6090;
+  color: #7A26C1;
   font-weight: 400;
 }
 
 .top-streamers ul li h6 i {
   color: #fff;
-  background-color: #ec6090;
+  background-color: #7A26C1;
   border-radius: 50%;
   font-size: 12px;
   width: 20px;
@@ -1536,7 +1536,7 @@ Profile Style
 .main-profile ul li span {
   float: right;
   font-weight: 500;
-  color: #ec6090;
+  color: #7A26C1;
 }
 
 .main-profile ul li:last-child {
@@ -1578,7 +1578,7 @@ Profile Style
     display: inline-block;
     text-align: center;
     line-height: 46px;
-    color: #ec6090;
+    color: #7A26C1;
 }
 
 .clips .item h4 {
@@ -1587,7 +1587,7 @@ Profile Style
 }
 
 .clips .item span i {
-  color: #ec6090;
+  color: #7A26C1;
 }
 
 .clips .item span {
