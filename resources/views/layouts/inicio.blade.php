@@ -52,7 +52,7 @@ https://templatemo.com/tm-579-cyborg-gaming
             <div class="col-12">
                 <nav class="main-nav">
                     <!-- ***** Logo Start ***** -->
-                    <a href="index.html" class="logo">
+                    <a href="{{route('inicio')}}" class="logo">
                         <img src="assets/images/logo.png" alt="" width="auto" height="auto">
                     </a>
                     <!-- ***** Logo End ***** -->
@@ -78,15 +78,17 @@ https://templatemo.com/tm-579-cyborg-gaming
                               @endif
                               @else
                                 <li class="nav-item dropdown">
-                                    <a id="navbarDropdown" class="nav-link dropdown-toggle" href="#" role="button" data-bs-toggle="dropdown" aria-haspopup="true" aria-expanded="false" v-pre>
-                                        {{ Auth::user()->name }}
-                                    </a>
 
-                                    <div class="dropdown-menu dropdown-menu-end" aria-labelledby="navbarDropdown">
-                                        <a class="dropdown-item" href="{{ route('logout') }}"
+                                    <a id="navbarDropdown" class="nav-link dropdown-toggle" href="#" role="button" data-bs-toggle="dropdown" aria-haspopup="true" aria-expanded="false" v-pre>
+                                        {{ Auth::user()->name }}<img src="assets/images/profile-header.png" alt="">
+                                    </a>
+                                    
+
+                                    <div class="dropdown-menu dropdown-menu-end bg-carbon" aria-labelledby="navbarDropdown">
+                                        <a class="dropdown-item bg-transparent" href="{{ route('logout') }}"
                                           onclick="event.preventDefault();
                                                         document.getElementById('logout-form').submit();">
-                                            {{ __('Logout') }}
+                                            {{ __('Cerrar sesión') }}
                                         </a>
 
                                         <form id="logout-form" action="{{ route('logout') }}" method="POST" class="d-none">

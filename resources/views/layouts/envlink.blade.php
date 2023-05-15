@@ -16,10 +16,10 @@
 
 
     <!-- Additional CSS Files -->
-    <link rel="stylesheet" href="assets/css/fontawesome.css">
-    <link rel="stylesheet" href="assets/css/templatemo-cyborg-gaming.css">
-    <link rel="stylesheet" href="assets/css/owl.css">
-    <link rel="stylesheet" href="assets/css/animate.css">
+    <link rel="stylesheet" href="/assets/css/fontawesome.css">
+    <link rel="stylesheet" href="/assets/css/templatemo-cyborg-gaming.css">
+    <link rel="stylesheet" href="/assets/css/owl.css">
+    <link rel="stylesheet" href="/assets/css/animate.css">
     <link rel="stylesheet"href="https://unpkg.com/swiper@7/swiper-bundle.min.css"/>
 
 <!--
@@ -33,19 +33,6 @@ https://templatemo.com/tm-579-cyborg-gaming
 
 <body>
 
-  <!-- ***** Preloader Start ***** -->
-  <div id="js-preloader" class="js-preloader">
-    <div class="preloader-inner">
-      <span class="dot"></span>
-      <div class="dots">
-        <span></span>
-        <span></span>
-        <span></span>
-      </div>
-    </div>
-  </div>
-  <!-- ***** Preloader End ***** -->
-
   <!-- ***** Header Area Start ***** -->
   <header class="header-area header-sticky">
     <div class="container">
@@ -54,7 +41,7 @@ https://templatemo.com/tm-579-cyborg-gaming
                 <nav class="main-nav">
                     <!-- ***** Logo Start ***** -->
                     <a href="{{route('inicio')}}" class="logo">
-                        <img src="assets/images/logo.png" alt="" width="auto" height="auto">
+                        <img src="/assets/images/logo.png" alt="" width="auto" height="auto">
                     </a>
                     <!-- ***** Logo End ***** -->
                     <!-- ***** Search End ***** -->
@@ -74,7 +61,7 @@ https://templatemo.com/tm-579-cyborg-gaming
                           @guest
                               @if (Route::has('login'))
                                   <li class="nav-item">
-                                      <a class="nav-link" href="{{ route('login') }}">{{ __('Perfil') }}<img src="assets/images/profile-header.png" alt=""></a>
+                                      <a class="nav-link" href="{{ route('login') }}">{{ __('Perfil') }}<img src="/assets/images/profile-header.png" alt=""></a>
                                   </li>
                               @endif
                               @else

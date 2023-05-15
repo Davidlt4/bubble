@@ -11,7 +11,7 @@
                 <img src="assets/images/logo.png" class="logo-login">
             </div> -->
                 <div class="row mb-0">
-                    <div class="col-md-0 w-auto h-auto bg-transparent p-3 position-relative start-50 translate-middle">
+                    <div class="col-md-0 w-auto h-auto bg-transparent position-relative start-50 translate-middle">
                         <img src="assets/images/logo.png" alt="" width="175px" height="100px">
                     </div>         
                 </div>
@@ -55,7 +55,7 @@
                                     <input class="form-check-input" type="checkbox" name="remember" id="remember" {{ old('remember') ? 'checked' : '' }}>
 
                                     <label class="form-check-label text-white" for="remember">
-                                        {{ __('Recuerdame') }}
+                                        {{ __('Recuérdame') }}
                                     </label>
                                 </div>
                             </div>
@@ -64,11 +64,11 @@
                         <div class="row mb-5">
                             <div class="col-md-8 offset-md-4">
                                 <button type="submit" class="btn btn-morado fw-bold">
-                                    {{ __('Iniciar sesión') }}
+                                    {{ __('INICIAR SESIÓN') }}
                                 </button>
 
                                 @if (Route::has('password.request'))
-                                    <a class="link-morado text-white" href="{{ route('password.request') }}">
+                                    <a class="link-morado text-white ms-3" href="{{ route('password.request') }}">
                                         {{ __('¿Has olvidado tu contraseña?') }}
                                     </a>
                                 @endif
@@ -89,7 +89,7 @@
         @guest
             @if (Route::has('register'))
                 <button type="submit" class=" ms-3 btn btn-light text-morado fw-bold">
-                    <a class="nav-link" href="{{ route('register') }}">{{ __('Registrate') }}</a>
+                    <a class="nav-link" href="{{ route('register') }}">{{ __('REGISTRATE') }}</a>
                  </button>
             @endif
         @endguest
