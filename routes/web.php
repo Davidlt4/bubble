@@ -1,6 +1,7 @@
 <?php
 
 use App\Http\Controllers\CategoriaController;
+use App\Http\Controllers\ImageneController;
 use Illuminate\Support\Facades\Auth;
 use Illuminate\Support\Facades\Route;
 
@@ -19,7 +20,16 @@ Route::get('/', function () {
     return view('welcome');
 })->name('inicio');
 
+Route::get('/galeria', function () {
+    return view('imagenes/index')->with('fotos',ImageneController::cargarGaleria());
+})->name('galeria');
+
+Route::get('/masfoto', function () {
+    return view('imagenes/create');
+})->name('masfoto');
+
 Route::resource('/categorias',CategoriaController::class);
+Route::resource('/imagenes',ImageneController::class);
 
 Auth::routes();
 

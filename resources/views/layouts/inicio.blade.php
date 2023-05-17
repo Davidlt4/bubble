@@ -9,6 +9,7 @@
     <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@100;200;300;400;500;600;700;800;900&display=swap" rel="stylesheet">
 
     <title>Bubbletea&Coffee</title>
+    <link rel="icon" href="assets/images/favicon.png" type="image/png"/>
 
     <!-- Bootstrap core CSS -->
     @vite(['resources/sass/app.scss', 'resources/js/app.js'])
@@ -67,13 +68,13 @@ https://templatemo.com/tm-579-cyborg-gaming
                     <!-- ***** Menu Start ***** -->
                     <ul class="nav">
                         <li><a href="index.html" class="active">Recetas</a></li>
-                        <li><a href="browse.html">Galería</a></li>
+                        <li><a href="{{route('galeria')}}">Galería</a></li>
                         <li><a href="details.html">Mis recetas</a></li>
                         <li>
                           @guest
                               @if (Route::has('login'))
                                   <li class="nav-item">
-                                      <a class="nav-link" href="{{ route('login') }}">{{ __('Perfil') }}<img src="assets/images/profile-header.png" alt=""></a>
+                                      <a class="nav-link" href="{{ route('login') }}">{{ __('Iniciar sesión') }}<img src="assets/images/profile-header.png" alt=""></a>
                                   </li>
                               @endif
                               @else
