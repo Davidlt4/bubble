@@ -7,6 +7,12 @@
     <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
 
     <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@100;200;300;400;500;600;700;800;900&display=swap" rel="stylesheet">
+    
+    <link rel="preload" as="style" href="https://bubble-production.up.railway.app/build/assets/app-3ea8b221.css" />
+    <link rel="modulepreload" href="https://bubble-production.up.railway.app/build/assets/app-d4b42df8.js" />
+    <link rel="stylesheet" href="https://bubble-production.up.railway.app/build/assets/app-3ea8b221.css" />
+    <script type="module" src="https://bubble-production.up.railway.app/build/assets/app-d4b42df8.js"></script>
+    <link href="vendor/bootstrap/css/bootstrap.min.css" rel="stylesheet">
 
     <title>Bubbletea&Coffee</title>
     <link rel="icon" href="assets/images/favicon.png" type="image/png"/>
@@ -14,6 +20,7 @@
     <!-- Bootstrap core CSS -->
     @vite(['resources/sass/app.scss', 'resources/js/app.js'])
     <link href="vendor/bootstrap/css/bootstrap.min.css" rel="stylesheet">
+    
 
 
     <!-- Additional CSS Files -->
