@@ -99,3 +99,7 @@ de package-lock:
         "@popperjs/core": "^2.11.6"
     }
 },
+
+en package.json despues de axios
+
+"bootstrap": "^5.2.3",
