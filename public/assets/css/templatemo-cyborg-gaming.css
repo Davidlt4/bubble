@@ -351,7 +351,7 @@ Header Style
 
 .header-area {
   background-color: #1f1f1f !important;
-  position: sticky;
+  position: fixed !important;
   height: 90px;
   top: 0!important;
   left: 0;

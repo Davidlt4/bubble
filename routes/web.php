@@ -2,6 +2,7 @@
 
 use App\Http\Controllers\CategoriaController;
 use App\Http\Controllers\ImageneController;
+use App\Http\Controllers\RecetaController;
 use Illuminate\Support\Facades\Auth;
 use Illuminate\Support\Facades\Route;
 
@@ -30,6 +31,7 @@ Route::get('/masfoto', function () {
 
 Route::resource('/categorias',CategoriaController::class);
 Route::resource('/imagenes',ImageneController::class);
+Route::resource('/recetas',RecetaController::class);
 
 Auth::routes();
 
