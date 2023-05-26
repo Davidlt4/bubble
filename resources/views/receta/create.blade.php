@@ -5,7 +5,13 @@
 @endsection
 
 @section('content')
+    
     <section class="content container-fluid">
+        <div class="row mb-0">
+            <div class="col-md-0 w-auto h-auto bg-transparent position-relative start-50 translate-middle">
+                <img src="/assets/images/logo.png" alt="" width="175px" height="100px">
+            </div>         
+        </div>
         <div class="row">
             <div class="col-md-12">
 

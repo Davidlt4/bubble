@@ -104,7 +104,7 @@ https://templatemo.com/tm-579-cyborg-gaming
 
         <!-- ***** Most Popular Start ***** -->
         <div class="most-popular">
-          <div class="row mt-3">
+          <div class="row mt-1">
             <div class="col-lg-12">
               @yield('content')
             </div>
