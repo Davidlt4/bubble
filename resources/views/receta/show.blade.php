@@ -1,4 +1,4 @@
-@extends('layouts.app')
+@extends('layouts.receta')
 
 @section('template_title')
     {{ $receta->name ?? "{{ __('Show') Receta" }}

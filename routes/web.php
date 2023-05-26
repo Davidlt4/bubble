@@ -1,7 +1,7 @@
 <?php
 
 use App\Http\Controllers\CategoriaController;
-use App\Http\Controllers\ImageneController;
+use App\Http\Controllers\FotoController;
 use App\Http\Controllers\RecetaController;
 use Illuminate\Support\Facades\Auth;
 use Illuminate\Support\Facades\Route;
@@ -22,7 +22,7 @@ Route::get('/', function () {
 })->name('inicio');
 
 Route::get('/galeria', function () {
-    return view('imagenes/index')->with('fotos',ImageneController::cargarGaleria());
+    return view('foto/galeria')->with('fotos',FotoController::cargarGaleria());
 })->name('galeria');
 
 Route::get('/masfoto', function () {
@@ -30,7 +30,7 @@ Route::get('/masfoto', function () {
 })->name('masfoto');
 
 Route::resource('/categorias',CategoriaController::class);
-Route::resource('/imagenes',ImageneController::class);
+Route::resource('/fotos',FotoController::class);
 Route::resource('/recetas',RecetaController::class);
 
 Auth::routes();

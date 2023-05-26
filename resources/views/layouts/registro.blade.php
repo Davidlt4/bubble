@@ -73,8 +73,8 @@ https://templatemo.com/tm-579-cyborg-gaming
                     <!-- ***** Search End ***** -->
                     <!-- ***** Menu Start ***** -->
                     <ul class="nav">
-                        <li><a href="index.html" class="active">Recetas</a></li>
-                        <li><a href="browse.html">Galería</a></li>
+                        <li><a href="index.html">Recetas</a></li>
+                        <li><a href="{{route('galeria')}}">Galería</a></li>
                         <li><a href="details.html">Mis recetas</a></li>
                         <li>
                           @guest
@@ -112,7 +112,7 @@ https://templatemo.com/tm-579-cyborg-gaming
             </div>
         </div>
     </div>
-  </header>
+  </header><br><br>
   <!-- ***** Header Area End ***** -->
 
   <div class="container">
@@ -121,7 +121,7 @@ https://templatemo.com/tm-579-cyborg-gaming
 
         <!-- ***** Most Popular Start ***** -->
         <div class="most-popular">
-          <div class="row">
+          <div class="row mt-5">
             <div class="col-lg-12">
               @yield('content')
             </div>

@@ -106,4 +106,13 @@ class FotoController extends Controller
         return redirect()->route('fotos.index')
             ->with('success', 'Foto deleted successfully');
     }
+
+    public static function cargarGaleria(){
+        $fotos=[];
+        foreach (glob("assets/galeria/*") as $foto) {
+            array_push($fotos,$foto);
+        }
+        return $fotos;
+    }
+    
 }

@@ -11,7 +11,7 @@
 
                 @includeif('partials.errors')
 
-                <div class="card card-default">
+                <div class="card card-default bg-carbon">
                     <div class="card-header">
                         <span class="card-title">{{ __('Create') }} Foto</span>
                     </div>
