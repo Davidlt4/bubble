@@ -3,6 +3,7 @@
 namespace App\Models;
 
 use Illuminate\Database\Eloquent\Model;
+use Illuminate\Support\Facades\DB;
 
 /**
  * Class Categoria
@@ -31,6 +32,17 @@ class Categoria extends Model
      */
     protected $fillable = ['nombre'];
 
+    public static function getAll(){
+        
+      $categorias = DB::select('SELECT id,nombre FROM categorias');
+      $categoriasform=[];
 
+      foreach($categorias as $categoria){
+          $categoriasform[$categoria->id]=$categoria->nombre;
+      }
+
+      return $categoriasform;
+
+    }
 
 }

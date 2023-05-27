@@ -1,10 +1,11 @@
-@extends('layouts.login')
+@extends('layouts.receta')
 
 @section('template_title')
     Receta
 @endsection
 
 @section('content')
+    <br><br>
     <div class="container-fluid mb-5">
         <div class="heading-section">
             <h4><em>Zona </em> Recetas <em>Administrador</em></h4>

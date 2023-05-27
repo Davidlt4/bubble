@@ -31,7 +31,7 @@ Route::get('/masfoto', function () {
 
 Route::resource('/categorias',CategoriaController::class);
 Route::resource('/fotos',FotoController::class);
-Route::resource('/recetas',RecetaController::class);
+Route::resource('/recetas',RecetaController::class)->middleware('auth');
 
 Auth::routes();
 

@@ -106,4 +106,8 @@ class CategoriaController extends Controller
         return redirect()->route('categorias.index')
             ->with('success', 'Categoria deleted successfully');
     }
+
+    public static function getAll(){
+        return Categoria::getAll();
+    }
 }
