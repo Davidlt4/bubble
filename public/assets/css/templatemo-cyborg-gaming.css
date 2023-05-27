@@ -1601,6 +1601,10 @@ Profile Style
   text-align: center;
 }
 
+.sombreado{
+  text-shadow: 0 0 5px  #7A26C1, 0 0 7px #7A26C1;
+}
+
 /* 
 ---------------------------------------------
 Responsive Style

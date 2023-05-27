@@ -4,6 +4,13 @@
     Receta
 @endsection
 
+<?php
+
+    use App\Models\Categoria;
+    use App\Models\User;
+
+?>
+
 @section('content')
     <br><br>
     <div class="container-fluid mb-5">
@@ -38,31 +45,35 @@
                     <div class="card-body">
                         <div class="table-responsive">
                             <table class="table table-striped table-hover text-white">
-                                <thead class="thead text-white">
+                                <thead class="thead text-white sombreado">
                                     <tr>
-                                        <th>No</th>
+                                        <th>ID</th>
                                         
 										<th>Nombre</th>
 										<th>Ingredientes</th>
-										<th>Id Imagen</th>
-										<th>Id Categoria</th>
+										<th>Imagen</th>
+										<th>Categoria</th>
 										<th>Preparacion</th>
-										<th>Id Usuario</th>
+										<th>Usuario</th>
 
                                         <th></th>
                                     </tr>
                                 </thead>
                                 <tbody>
                                     @foreach ($recetas as $receta)
+                                        <?php 
+                                            $categoria=Categoria::find($receta->id_categoria);
+                                            $usuario=User::find($receta->id_usuario);
+                                        ?>
                                         <tr>
-                                            <td class="text-white">{{ ++$i }}</td>
+                                            <td class="text-white">{{ $receta->id }}</td>
                                             
 											<td class="text-white">{{ $receta->nombre }}</td>
 											<td class="text-white">{{ $receta->ingredientes }}</td>
 											<td class="text-white">{{ $receta->id_imagen }}</td>
-											<td class="text-white">{{ $receta->id_categoria }}</td>
+											<td class="text-white">{{ $categoria->nombre }}</td>
 											<td class="text-white">{{ $receta->preparacion }}</td>
-											<td class="text-white">{{ $receta->id_usuario }}</td>
+											<td class="text-white">{{ $usuario->email }}</td>
 
                                             <td>
                                                 <form action="{{ route('recetas.destroy',$receta->id) }}" method="POST">

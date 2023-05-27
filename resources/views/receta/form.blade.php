@@ -11,7 +11,7 @@
     <div class="box-body">
         
         <div class="form-group text-white mb-3">
-            {{ Form::label('nombre') }}
+            {{ Form::label('Nombre Receta') }}
             {{ Form::text('nombre', $receta->nombre, ['class' => 'form-control' . ($errors->has('nombre') ? ' is-invalid' : ''), 'placeholder' => 'Nombre']) }}
             {!! $errors->first('nombre', '<div class="invalid-feedback">:message</div>') !!}
         </div>
@@ -36,8 +36,7 @@
             {!! $errors->first('preparacion', '<div class="invalid-feedback">:message</div>') !!}
         </div>
         <div class="form-group text-white ">
-            {{ Form::label('Usuario') }}
-            {{ Form::text('id_usuario',auth()->user()->name, ['class' => 'form-control' . ($errors->has('id_usuario') ? ' is-invalid' : ''), 'placeholder' => auth()->user()->name,'value' => Auth::id(),'readonly']) }}
+            {{ Form::hidden('id_usuario',Auth::id(), ['class' => 'form-control' . ($errors->has('id_usuario') ? ' is-invalid' : ''), 'placeholder' => auth()->user()->name,'value' => Auth::id(),'readonly']) }}
             {!! $errors->first('id_usuario', '<div class="invalid-feedback">:message</div>') !!}
         </div>
 
