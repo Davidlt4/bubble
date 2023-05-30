@@ -11,7 +11,7 @@
 
                 @includeif('partials.errors')
 
-                <div class="card card-default">
+                <div class="card card-default bg-carbon">
                     <div class="card-header d-flex justify-content-between">
                         <div class="float-left">
                             <span class="card-title text-white fw-bold">Editar <span class="text-morado">Categoría</span></span>

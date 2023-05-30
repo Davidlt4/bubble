@@ -1,7 +1,7 @@
 <div class="box box-info padding-1">
     <div class="box-body">
         
-        <div class="form-group">
+        <div class="form-group mb-3 text-white">
             {{ Form::label('nombre') }}
             {{ Form::text('nombre', $categoria->nombre, ['class' => 'form-control' . ($errors->has('nombre') ? ' is-invalid' : ''), 'placeholder' => 'Nombre']) }}
             {!! $errors->first('nombre', '<div class="invalid-feedback">:message</div>') !!}
@@ -9,6 +9,6 @@
 
     </div>
     <div class="box-footer mt20">
-        <button type="submit" class="btn btn-primary">{{ __('Submit') }}</button>
+        <button type="submit" class="btn btn-morado fw-bold">{{ __('ENVIAR') }}</button>
     </div>
 </div>

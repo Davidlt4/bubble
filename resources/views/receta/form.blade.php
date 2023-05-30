@@ -42,6 +42,6 @@
 
     </div>
     <div class="box-footer mt-3">
-        <button type="submit" class="btn btn-morado fw-bold">{{ __('SUBIR RECETA') }}</button>
+        <button type="submit" class="btn btn-morado fw-bold">{{ __('ENVIAR') }}</button>
     </div>
 </div>
