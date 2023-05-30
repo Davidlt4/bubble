@@ -1,7 +1,7 @@
-@extends('layouts.app')
+@extends('layouts.receta')
 
 @section('template_title')
-    {{ __('Update') }} Categoria
+    {{ __('Editar') }} Categoria
 @endsection
 
 @section('content')
@@ -12,8 +12,13 @@
                 @includeif('partials.errors')
 
                 <div class="card card-default">
-                    <div class="card-header">
-                        <span class="card-title">{{ __('Update') }} Categoria</span>
+                    <div class="card-header d-flex justify-content-between">
+                        <div class="float-left">
+                            <span class="card-title text-white fw-bold">Editar <span class="text-morado">Categoría</span></span>
+                        </div>
+                        <div class="float-right">
+                            <a class="btn btn-morado fw-bold" href="{{ route('categorias.index') }}"> {{ __('Volver') }}</a>
+                        </div>
                     </div>
                     <div class="card-body">
                         <form method="POST" action="{{ route('categorias.update', $categoria->id) }}"  role="form" enctype="multipart/form-data">
