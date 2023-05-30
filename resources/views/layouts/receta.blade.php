@@ -58,6 +58,20 @@ https://templatemo.com/tm-579-cyborg-gaming
                     <ul class="nav">
                         <li><a href="index.html">Recetas</a></li>
                         <li><a href="{{route('galeria')}}">Galería</a></li>
+                        @if(Auth::check())
+                           @if(Auth::user()->role=='1')
+                              <li class="nav-item dropdown">
+
+                                <a id="navbarDropdown" class="nav-link dropdown-toggle" href="#" role="button" data-bs-toggle="dropdown" aria-haspopup="true" aria-expanded="false" href="{{route('recetasAdmin')}}">Gestionar</a>
+
+                                <div class="dropdown-menu dropdown-menu-end bg-carbon" aria-labelledby="navbarDropdown">
+                                  <a class="dropdown-item bg-transparent" href="{{route('recetasAdmin')}}">Recetas</a>
+                                  <a class="dropdown-item bg-transparent" href="{{route('categoriasAdmin')}}">Categorias</a>
+                                </div>
+
+                              </li>
+                            @endif
+                        @endif
                         <li><a href="details.html">Mis recetas</a></li>
                         <li>
                           @guest
