@@ -17,21 +17,35 @@ use Illuminate\Support\Facades\Route;
 |
 */
 
+
+
+// INICIO
+
 Route::get('/', function () {
     return view('welcome');
 })->name('inicio');
 
-Route::get('/galeria', function () {
-    return view('foto/galeria')->with('fotos',FotoController::cargarGaleria());
-})->name('galeria');
 
 Route::get('/masfoto', function () {
     return view('imagenes/create');
 })->name('masfoto');
 
-Route::resource('/categorias',CategoriaController::class);
+
+//Apartado de categorias
+Route::resource('/categorias',CategoriaController::class)->middleware('admin');
+Route::get('categoriasAdmin',[CategoriaController::class,'index'])->name('categoriasAdmin')->middleware('admin');
+
+//Apartado de fotos
 Route::resource('/fotos',FotoController::class);
-Route::resource('/recetas',RecetaController::class)->middleware('auth');
+
+Route::get('/galeria', function () {
+    return view('foto/galeria')->with('fotos',FotoController::cargarGaleria());
+})->name('galeria');
+
+//Apartado de recetas
+
+Route::resource('/recetas',RecetaController::class)->middleware('admin');
+Route::get('recetasAdmin',[RecetaController::class,'index'])->name('recetasAdmin')->middleware('admin');
 
 Auth::routes();
 
