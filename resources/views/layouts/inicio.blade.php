@@ -82,9 +82,9 @@ https://templatemo.com/tm-579-cyborg-gaming
 
                                 <a id="navbarDropdown" class="nav-link dropdown-toggle" href="#" role="button" data-bs-toggle="dropdown" aria-haspopup="true" aria-expanded="false" href="{{route('recetasAdmin')}}">Gestionar</a>
 
-                                <div class="dropdown-menu dropdown-menu-end bg-carbon" aria-labelledby="navbarDropdown">
-                                  <a class="dropdown-item bg-transparent" href="{{route('recetasAdmin')}}">Recetas</a>
-                                  <a class="dropdown-item bg-transparent" href="{{route('categoriasAdmin')}}">Categorias</a>
+                                <div class="dropdown-menu dropdown-menu-end" aria-labelledby="navbarDropdown">
+                                  <a class="dropdown-item text-center text-morado" href="{{route('recetasAdmin')}}">Recetas</a>
+                                  <a class="dropdown-item text-center text-morado" href="{{route('categoriasAdmin')}}">Categorias</a>
                                 </div>
 
                               </li>
@@ -106,8 +106,9 @@ https://templatemo.com/tm-579-cyborg-gaming
                                     </a>
                                     
 
-                                    <div class="dropdown-menu dropdown-menu-end bg-carbon" aria-labelledby="navbarDropdown">
-                                        <a class="dropdown-item bg-transparent" href="{{ route('logout') }}"
+                                    <div class="dropdown-menu dropdown-menu-end" aria-labelledby="navbarDropdown">
+
+                                        <a class="dropdown-item bg-white text-center text-morado" href="{{ route('logout') }}"
                                           onclick="event.preventDefault();
                                                         document.getElementById('logout-form').submit();">
                                             {{ __('Cerrar sesión') }}

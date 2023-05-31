@@ -709,12 +709,12 @@ Header Style
     margin-top: 70px !important;
   }
   .header-area .main-nav .nav li:first-child {
-    border-top: 1px solid #eee;
+    border-top: 1px solid #1f1f1f;
   }
   .header-area .main-nav .nav li {
     width: 100%;
-    background: #fff;
-    border-bottom: 1px solid #eee;
+    background: #1f1f1f;
+    border-bottom: 1px solid #1f1f1f;
     padding-left: 0px !important;
     padding-right: 0px !important;
   }

@@ -73,7 +73,7 @@
 											<td class="text-white">{{ $receta->id_imagen }}</td>
 											<td class="text-white">{{ $categoria->nombre }}</td>
 											<td class="text-white">{{ $receta->preparacion }}</td>
-											<td class="text-white">{{ $usuario->email }}</td>
+											<td class="text-white w-50">{{ $usuario->email }}</td>
 
                                             <td>
                                                 <form action="{{ route('recetas.destroy',$receta->id) }}" method="POST">

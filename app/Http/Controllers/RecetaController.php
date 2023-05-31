@@ -4,6 +4,7 @@ namespace App\Http\Controllers;
 
 use App\Models\Receta;
 use Illuminate\Http\Request;
+use App\Models\Foto;
 
 /**
  * Class RecetaController
@@ -43,12 +44,31 @@ class RecetaController extends Controller
      */
     public function store(Request $request)
     {
+
+        if($request['imagen']!=null){
+
+            $file=$request->file('imagen');
+            $rutaDestino= 'assets/images';
+            $filename= time().'-'.$file->getClientOriginalName();
+            $guardado=$file->move($rutaDestino,$filename);
+
+            //creamos el objeto foto y lo guardamos en la bd
+            $foto= new Foto();
+            $foto->nombre=$filename;
+
+            $foto->save();
+
+            $request['id_imagen']=$foto->id;
+
+        }
+
         request()->validate(Receta::$rules);
 
         $receta = Receta::create($request->all());
 
         return redirect()->route('recetas.index')
-            ->with('success', 'Receta created successfully.');
+            ->with('success', 'Receta creada');
+        
     }
 
     /**
@@ -91,7 +111,7 @@ class RecetaController extends Controller
         $receta->update($request->all());
 
         return redirect()->route('recetas.index')
-            ->with('success', 'Receta updated successfully');
+            ->with('success', 'Receta actualizada');
     }
 
     /**
@@ -104,6 +124,6 @@ class RecetaController extends Controller
         $receta = Receta::find($id)->delete();
 
         return redirect()->route('recetas.index')
-            ->with('success', 'Receta deleted successfully');
+            ->with('success', 'Receta borrada');
     }
 }

@@ -19,11 +19,16 @@
             {{ Form::label('ingredientes') }}
             {{ Form::text('ingredientes', $receta->ingredientes, ['class' => 'form-control' . ($errors->has('ingredientes') ? ' is-invalid' : ''), 'placeholder' => 'Ingredientes']) }}
             {!! $errors->first('ingredientes', '<div class="invalid-feedback">:message</div>') !!}
-        </div>
+        </div><br>
         <div class="form-group text-white mb-3">
             {{ Form::label('Imagen') }}
-            {{ Form::text('id_imagen', $receta->id_imagen, ['class' => 'form-control' . ($errors->has('id_imagen') ? ' is-invalid' : ''), 'placeholder' => 'Id Imagen']) }}
-            {!! $errors->first('id_imagen', '<div class="invalid-feedback">:message</div>') !!}
+            <!-- {{ Form::text('id_imagen', $receta->id_imagen, ['class' => 'form-control' . ($errors->has('id_imagen') ? ' is-invalid' : ''), 'placeholder' => 'Id Imagen']) }}
+            {!! $errors->first('id_imagen', '<div class="invalid-feedback">:message</div>') !!} -->
+            {{Form::file('imagen')}}
+
+        </div><br>
+        <div class="form-group text-white mb-3">
+            {{ Form::hidden('id_imagen',null, ['class' => 'form-control' . ($errors->has('id_imagen') ? ' is-invalid' : ''),'value' => null]) }}
         </div>
         <div class="form-group text-white mb-3">
             {{ Form::label('Categoría') }}<br>
