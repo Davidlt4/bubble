@@ -126,4 +126,8 @@ class RecetaController extends Controller
         return redirect()->route('recetas.index')
             ->with('success', 'Receta borrada');
     }
+
+    public static function getAll(){
+        return Receta::getAll();
+    }
 }

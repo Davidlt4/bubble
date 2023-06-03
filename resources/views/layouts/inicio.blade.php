@@ -90,7 +90,7 @@ https://templatemo.com/tm-579-cyborg-gaming
                               </li>
                             @endif
                         @endif
-                        <li><a href="details.html">Mis recetas</a></li>
+                        <li><a href="{{route('misRecetas')}}">Mis recetas</a></li>
                         <li>
                           @guest
                               @if (Route::has('login'))

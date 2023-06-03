@@ -3,6 +3,7 @@
 namespace App\Models;
 
 use Illuminate\Database\Eloquent\Model;
+use Illuminate\Support\Facades\DB;
 
 /**
  * Class Receta
@@ -39,6 +40,19 @@ class Receta extends Model
      * @var array
      */
     protected $fillable = ['nombre','ingredientes','id_imagen','id_categoria','preparacion','id_usuario'];
+
+    public static function getAll(){
+        
+      $recetas = DB::select('SELECT * FROM recetas');
+      $recetasform=[];
+
+      foreach($recetas as $receta){
+          $recetasform[$receta->id]=$receta->nombre;
+      }
+
+      return $recetasform;
+
+    }
 
 
 

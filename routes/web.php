@@ -26,12 +26,8 @@ Route::get('/', function () {
 })->name('inicio');
 
 
-Route::get('/masfoto', function () {
-    return view('imagenes/create');
-})->name('masfoto');
-
-
 //Apartado de categorias
+
 Route::resource('/categorias',CategoriaController::class)->middleware('admin');
 Route::get('categoriasAdmin',[CategoriaController::class,'index'])->name('categoriasAdmin')->middleware('admin');
 
@@ -48,6 +44,10 @@ Route::get('/subirfoto',[FotoController::class,'create'])->middleware('auth')->n
 
 Route::resource('/recetas',RecetaController::class)->middleware('admin');
 Route::get('recetasAdmin',[RecetaController::class,'index'])->name('recetasAdmin')->middleware('admin');
+
+Route::get('/misRecetas', function () {
+    return view('receta/index_usuario');
+})->name('misRecetas')->middleware('auth');
 
 Auth::routes();
 

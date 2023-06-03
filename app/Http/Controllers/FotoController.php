@@ -132,5 +132,9 @@ class FotoController extends Controller
         }
         return $fotos;
     }
+
+    public static function getAll(){
+        return Foto::getAll();
+    }
     
 }
