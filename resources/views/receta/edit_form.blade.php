@@ -20,16 +20,13 @@
             {{ Form::text('ingredientes', $receta->ingredientes, ['class' => 'form-control' . ($errors->has('ingredientes') ? ' is-invalid' : ''), 'placeholder' => 'Ingredientes']) }}
             {!! $errors->first('ingredientes', '<div class="invalid-feedback">:message</div>') !!}
         </div><br>
-        <div class="form-group text-white mb-3">
-            {{ Form::label('Imagen') }}
-            {{Form::file('imagen')}}
-        </div><br>
-        <div class="form-group text-white mb-3">
-            {{ Form::hidden('id_imagen',null, ['class' => 'form-control' . ($errors->has('id_imagen') ? ' is-invalid' : ''),'value' => null]) }}
+
+        <div class="form-group text-white">
+            {{ Form::hidden('id_imagen',$receta->id_imagen, ['class' => 'form-control' . ($errors->has('id_imagen') ? ' is-invalid' : ''),'value' => $receta->id_imagen]) }}
         </div>
+
         <div class="form-group text-white mb-3">
             {{ Form::label('Categoría') }}<br>
-            <!-- {{ Form::select('id_categoria',$categorias,['class' => 'form-select text-morado' . ($errors->has('id_categoria') ? ' is-invalid' : ''), 'value' => $categorias]) }} -->
             {{ Form::select('id_categoria',$categorias,null, ['class' => 'form-select text-morado']) }}
         </div>
         <div class="form-group text-white mb-3">

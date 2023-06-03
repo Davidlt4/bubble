@@ -31,7 +31,7 @@
                             {{ method_field('PATCH') }}
                             @csrf
 
-                            @include('receta.form')
+                            @include('receta.edit_form')
 
                         </form>
                     </div>

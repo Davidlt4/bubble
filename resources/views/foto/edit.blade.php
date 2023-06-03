@@ -1,4 +1,4 @@
-@extends('layouts.app')
+@extends('layouts.receta')
 
 @section('template_title')
     {{ __('Update') }} Foto

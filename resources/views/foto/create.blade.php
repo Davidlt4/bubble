@@ -1,7 +1,7 @@
-@extends('layouts.app')
+@extends('layouts.receta')
 
 @section('template_title')
-    {{ __('Create') }} Foto
+    {{ __('Subir') }} Foto
 @endsection
 
 @section('content')
@@ -12,9 +12,23 @@
                 @includeif('partials.errors')
 
                 <div class="card card-default bg-carbon">
-                    <div class="card-header">
-                        <span class="card-title">{{ __('Create') }} Foto</span>
+
+
+                    <div class="card-header d-flex justify-content-between">
+                        <div class="float-left">
+                            <span class="card-title text-white fw-bold">{{ __('Subir') }} <span class="text-morado">Foto</span>
+                        </div>
+                        <div class="float-right">
+                            <a class="btn btn-morado fw-bold" href="{{ route('galeria') }}"> {{ __('Volver') }}</a>
+                        </div>
                     </div>
+
+                    @if ($message = Session::get('success'))
+                        <div class="alert alert-success">
+                            <p>{{ $message }}</p>
+                        </div>
+                    @endif
+
                     <div class="card-body">
                         <form method="POST" action="{{ route('fotos.store') }}"  role="form" enctype="multipart/form-data">
                             @csrf
@@ -26,5 +40,5 @@
                 </div>
             </div>
         </div>
-    </section>
+    </section><br><br><br><br>
 @endsection

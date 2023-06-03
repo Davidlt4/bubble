@@ -36,11 +36,13 @@ Route::resource('/categorias',CategoriaController::class)->middleware('admin');
 Route::get('categoriasAdmin',[CategoriaController::class,'index'])->name('categoriasAdmin')->middleware('admin');
 
 //Apartado de fotos
-Route::resource('/fotos',FotoController::class);
+Route::resource('/fotos',FotoController::class)->middleware('admin');
 
 Route::get('/galeria', function () {
     return view('foto/galeria')->with('fotos',FotoController::cargarGaleria());
 })->name('galeria');
+
+Route::get('/subirfoto',[FotoController::class,'create'])->middleware('auth')->name('subirfoto');
 
 //Apartado de recetas
 

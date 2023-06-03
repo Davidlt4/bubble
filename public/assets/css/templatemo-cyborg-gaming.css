@@ -1606,6 +1606,21 @@ Profile Style
   text-shadow: 0 0 5px  #7A26C1, 0 0 7px #7A26C1;
 }
 
+img.zoom {
+  width: 100%;
+  height: 200px;
+  border-radius:5px;
+  object-fit:cover;
+  -webkit-transition: all .3s ease-in-out;
+  -moz-transition: all .3s ease-in-out;
+  -o-transition: all .3s ease-in-out;
+  -ms-transition: all .3s ease-in-out;
+}
+
+img.zoom:hover{
+  border: solid #7A26C1 ;
+}
+
 /* 
 ---------------------------------------------
 Responsive Style

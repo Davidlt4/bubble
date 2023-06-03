@@ -43,12 +43,30 @@ class FotoController extends Controller
      */
     public function store(Request $request)
     {
-        request()->validate(Foto::$rules);
 
-        $foto = Foto::create($request->all());
+        if($request['imagen']!=null){
 
-        return redirect()->route('fotos.index')
-            ->with('success', 'Foto created successfully.');
+            $file=$request->file('imagen');
+            $rutaDestino= 'assets/galeria';
+            $filename= time().'-'.$file->getClientOriginalName();
+            $guardado=$file->move($rutaDestino,$filename);
+
+            $request['nombre']=$filename;
+
+            request()->validate(Foto::$rules);
+
+            $foto = Foto::create($request->all());
+
+            return redirect()->route('fotos.create')
+                ->with('success', 'Foto subida correctamente a la galería.');
+
+        }else{
+            
+            return redirect()->route('fotos.create')
+            ->with('success','Por favor seleccione una foto');
+        }
+
+        
     }
 
     /**

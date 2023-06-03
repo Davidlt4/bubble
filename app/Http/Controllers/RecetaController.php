@@ -48,7 +48,7 @@ class RecetaController extends Controller
         if($request['imagen']!=null){
 
             $file=$request->file('imagen');
-            $rutaDestino= 'assets/images';
+            $rutaDestino= 'assets/galeria';
             $filename= time().'-'.$file->getClientOriginalName();
             $guardado=$file->move($rutaDestino,$filename);
 
