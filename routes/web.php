@@ -3,6 +3,7 @@
 use App\Http\Controllers\CategoriaController;
 use App\Http\Controllers\FotoController;
 use App\Http\Controllers\RecetaController;
+use App\Models\Receta;
 use Illuminate\Support\Facades\Auth;
 use Illuminate\Support\Facades\Route;
 
@@ -40,14 +41,26 @@ Route::get('/galeria', function () {
 
 Route::get('/subirfoto',[FotoController::class,'create'])->middleware('auth')->name('subirfoto');
 
-//Apartado de recetas
+
+
+//Apartado de RECETAS
+
+//PARA ADMIN
 
 Route::resource('/recetas',RecetaController::class)->middleware('admin');
+
 Route::get('recetasAdmin',[RecetaController::class,'index'])->name('recetasAdmin')->middleware('admin');
+
+//PARA USUARIO
 
 Route::get('/misRecetas', function () {
     return view('receta/index_usuario');
 })->name('misRecetas')->middleware('auth');
+
+Route::get('/crearReceta',[RecetaController::class,'create_usuario'])->name('crearReceta')->middleware('auth');
+Route::post('storeRecUsuario',[RecetaController::class,'store_usuario'])->name('storeRecUsuario')->middleware('auth');
+
+Route::delete('deleteRecUsuario/{id}',[RecetaController::class,'destroy_usuario'])->name('deleteRecUsuario')->middleware('auth');
 
 Auth::routes();
 

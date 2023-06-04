@@ -36,6 +36,12 @@ class RecetaController extends Controller
         return view('receta.create', compact('receta'));
     }
 
+    public function create_usuario()
+    {
+        $receta = new Receta();
+        return view('receta.create_usuario', compact('receta'));
+    }
+
     /**
      * Store a newly created resource in storage.
      *
@@ -67,6 +73,35 @@ class RecetaController extends Controller
         $receta = Receta::create($request->all());
 
         return redirect()->route('recetas.index')
+            ->with('success', 'Receta creada');
+        
+    }
+
+    public function store_usuario(Request $request)
+    {
+
+        if($request['imagen']!=null){
+
+            $file=$request->file('imagen');
+            $rutaDestino= 'assets/galeria';
+            $filename= time().'-'.$file->getClientOriginalName();
+            $guardado=$file->move($rutaDestino,$filename);
+
+            //creamos el objeto foto y lo guardamos en la bd
+            $foto= new Foto();
+            $foto->nombre=$filename;
+
+            $foto->save();
+
+            $request['id_imagen']=$foto->id;
+
+        }
+
+        request()->validate(Receta::$rules);
+
+        $receta = Receta::create($request->all());
+
+        return redirect()->route('misRecetas')
             ->with('success', 'Receta creada');
         
     }
@@ -119,11 +154,20 @@ class RecetaController extends Controller
      * @return \Illuminate\Http\RedirectResponse
      * @throws \Exception
      */
+
     public function destroy($id)
     {
         $receta = Receta::find($id)->delete();
 
         return redirect()->route('recetas.index')
+            ->with('success', 'Receta borrada');
+    }
+
+    public function destroy_usuario($id)
+    {
+        $receta = Receta::find($id)->delete();
+
+        return redirect()->route('misRecetas')
             ->with('success', 'Receta borrada');
     }
 

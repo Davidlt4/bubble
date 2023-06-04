@@ -31,7 +31,7 @@
                             </span>
 
                              <div class="float-right">
-                                <a href="{{ route('recetas.create') }}" class="btn btn-morado btn-sm float-right fw-bold"  data-placement="left">
+                                <a href="{{ route('crearReceta') }}" class="btn btn-morado btn-sm float-right fw-bold"  data-placement="left">
                                   SUBIR NUEVA RECETA
                                 </a>
                              </div>
@@ -49,8 +49,8 @@
                         @foreach ($recetas as $receta)
                             @if($receta->id_usuario==Auth::id())
                                 <?php $count++; ?>
-                                <div class="card mb-3 bg-carbon" style="max-width: 900px;">
-                                    <div class="row ">
+                                <div class="card mb-3 bg-carbon border border-3 border-white">
+                                    <div class="row row-cols-3">
 
                                         <div class="col-md-4">
                                             @foreach($fotos as $foto)
@@ -62,21 +62,26 @@
 
                                         <div class="col-md-8">
                                             <div class="card-body">
-                                                <h5 class="card-title text-white fw-bold">{{$receta->nombre}}</h5>
+
+                                                <h3 class="sombreado text-white fw-bold mb-2">{{$receta->nombre}}</h3>
+                                                <p class="sombreado text-white fw-bold">Ingredientes</p>
                                                 <p class="card-text text-white">{{$receta->ingredientes}}</p>
+                                                <p class="sombreado text-white fw-bold">Preparacion</p>
+                                                <p class="card-text text-white">{{$receta->preparacion}}</p>
+                                                
+                                                <form action="{{ route('deleteRecUsuario',$receta->id) }}" method="POST">
+
+                                                    <a class="btn btn-sm btn-morado fw-bold" href="{{ route('recetas.show',$receta->id) }}"><i class="fa fa-fw fa-eye"></i> {{ __('Ver') }}</a>
+
+                                                    <a class="btn btn-sm btn-light text-morado fw-bold" href="{{ route('recetas.edit',$receta->id) }}"><i class="fa fa-fw fa-edit"></i> {{ __('Editar') }}</a>
+                                                    @csrf
+                                                    @method('DELETE')
+                                                    <button type="submit" class="btn btn-danger btn-sm fw-bold"><i class="fa fa-fw fa-trash"></i> {{ __('Borrar') }}</button>
+
+                                                </form>
                                             </div>
                                         </div>
 
-                                        <div class="col-md-12">
-                                            
-                                            <form action="{{ route('recetas.destroy',$receta->id) }}" method="POST">
-                                                <a class="btn btn-sm btn-morado fw-bold" href="{{ route('recetas.show',$receta->id) }}"><i class="fa fa-fw fa-eye"></i> {{ __('Ver') }}</a>
-                                                <a class="btn btn-sm btn-light text-morado fw-bold" href="{{ route('recetas.edit',$receta->id) }}"><i class="fa fa-fw fa-edit"></i> {{ __('Editar') }}</a>
-                                                @csrf
-                                                @method('DELETE')
-                                                <button type="submit" class="btn btn-danger btn-sm fw-bold"><i class="fa fa-fw fa-trash"></i> {{ __('Borrar') }}</button>
-                                            </form>
-                                        </div>
                                     </div>
                                 </div>
 
