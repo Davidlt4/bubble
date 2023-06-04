@@ -132,6 +132,13 @@ class RecetaController extends Controller
         return view('receta.edit', compact('receta'));
     }
 
+    public function edit_usuario($id)
+    {
+        $receta = Receta::find($id);
+
+        return view('receta.edit_usuario', compact('receta'));
+    }
+
     /**
      * Update the specified resource in storage.
      *
@@ -146,6 +153,16 @@ class RecetaController extends Controller
         $receta->update($request->all());
 
         return redirect()->route('recetas.index')
+            ->with('success', 'Receta actualizada');
+    }
+
+    public function update_usuario(Request $request, Receta $receta)
+    {
+        request()->validate(Receta::$rules);
+
+        $receta->update($request->all());
+
+        return redirect()->route('misRecetas')
             ->with('success', 'Receta actualizada');
     }
 

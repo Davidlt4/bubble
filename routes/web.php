@@ -19,7 +19,6 @@ use Illuminate\Support\Facades\Route;
 */
 
 
-
 // INICIO
 
 Route::get('/', function () {
@@ -60,7 +59,12 @@ Route::get('/misRecetas', function () {
 Route::get('/crearReceta',[RecetaController::class,'create_usuario'])->name('crearReceta')->middleware('auth');
 Route::post('storeRecUsuario',[RecetaController::class,'store_usuario'])->name('storeRecUsuario')->middleware('auth');
 
+//para borrar receta
 Route::delete('deleteRecUsuario/{id}',[RecetaController::class,'destroy_usuario'])->name('deleteRecUsuario')->middleware('auth');
+
+//para editar receta updateRecUsuario
+Route::get('editRecUsuario/{id}',[RecetaController::class,'edit_usuario'])->name('editRecUsuario')->middleware('auth');
+Route::patch('updateRecUsuario/{receta}',[RecetaController::class,'update_usuario'])->name('updateRecUsuario')->middleware('auth');
 
 Auth::routes();
 
