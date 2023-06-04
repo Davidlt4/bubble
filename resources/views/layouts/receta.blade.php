@@ -72,22 +72,25 @@ https://templatemo.com/tm-579-cyborg-gaming
                               </li>
                             @endif
                         @endif
-                        <li><a href="details.html">Mis recetas</a></li>
+                        <li><a href="{{route('misRecetas')}}">Mis recetas</a></li>
                         <li>
                           @guest
                               @if (Route::has('login'))
                                   <li class="nav-item">
-                                      <a class="nav-link" href="{{ route('login') }}">{{ __('Iniciar sesión') }}<img src="/assets/images/profile-header.png" alt=""></a>
+                                      <a class="nav-link" href="{{ route('login') }}">{{ __('Iniciar sesión') }}<img src="assets/images/profile-header.png" alt=""></a>
                                   </li>
                               @endif
                               @else
                                 <li class="nav-item dropdown">
-                                    <a id="navbarDropdown" class="nav-link dropdown-toggle" href="#" role="button" data-bs-toggle="dropdown" aria-haspopup="true" aria-expanded="false" v-pre>
-                                        {{ Auth::user()->name }}<img src="/assets/images/profile-header.png" alt="">
-                                    </a>
 
-                                    <div class="dropdown-menu dropdown-menu-end bg-carbon" aria-labelledby="navbarDropdown">
-                                        <a class="dropdown-item" href="{{ route('logout') }}"
+                                    <a id="navbarDropdown" class="nav-link dropdown-toggle" href="#" role="button" data-bs-toggle="dropdown" aria-haspopup="true" aria-expanded="false" v-pre>
+                                        {{ Auth::user()->name }}<img src="assets/images/profile-header.png" alt="">
+                                    </a>
+                                    
+
+                                    <div class="dropdown-menu dropdown-menu-end" aria-labelledby="navbarDropdown">
+
+                                        <a class="dropdown-item bg-white text-center text-morado" href="{{ route('logout') }}"
                                           onclick="event.preventDefault();
                                                         document.getElementById('logout-form').submit();">
                                             {{ __('Cerrar sesión') }}

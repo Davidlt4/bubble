@@ -74,7 +74,7 @@ https://templatemo.com/tm-579-cyborg-gaming
                     <!-- ***** Menu Start ***** -->
                     <ul class="nav">
                         <li><a href="index.html">Recetas</a></li>
-                        <li><a href="{{route('galeria')}}" class="active">Galería</a></li>
+                        <li><a href="{{route('galeria')}}">Galería</a></li>
                         @if(Auth::check())
                            @if(Auth::user()->role=='1')
                               <li class="nav-item dropdown">
@@ -89,7 +89,7 @@ https://templatemo.com/tm-579-cyborg-gaming
                               </li>
                             @endif
                         @endif
-                        <li><a href="details.html">Mis recetas</a></li>
+                        <li><a href="{{route('misRecetas')}}">Mis recetas</a></li>
                         <li>
                           @guest
                               @if (Route::has('login'))
@@ -99,15 +99,18 @@ https://templatemo.com/tm-579-cyborg-gaming
                               @endif
                               @else
                                 <li class="nav-item dropdown">
+
                                     <a id="navbarDropdown" class="nav-link dropdown-toggle" href="#" role="button" data-bs-toggle="dropdown" aria-haspopup="true" aria-expanded="false" v-pre>
-                                        {{ Auth::user()->name }} <img src="assets/images/profile-header.png" alt="">
+                                        {{ Auth::user()->name }}<img src="assets/images/profile-header.png" alt="">
                                     </a>
+                                    
 
                                     <div class="dropdown-menu dropdown-menu-end" aria-labelledby="navbarDropdown">
-                                        <a class="dropdown-item" href="{{ route('logout') }}"
+
+                                        <a class="dropdown-item bg-white text-center text-morado" href="{{ route('logout') }}"
                                           onclick="event.preventDefault();
                                                         document.getElementById('logout-form').submit();">
-                                            {{ __('Logout') }}
+                                            {{ __('Cerrar sesión') }}
                                         </a>
 
                                         <form id="logout-form" action="{{ route('logout') }}" method="POST" class="d-none">
