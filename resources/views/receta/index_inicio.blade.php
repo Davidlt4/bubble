@@ -21,8 +21,9 @@
     <div class="container-fluid mb-5">
         <div class="heading-section d-flex justify-content-around mb-5">
             <!--Categorias-->
+            <span class="sombreado text-white h-50">|</span>
             @foreach($categorias as $categoria)
-                <a class="text-morado bg-white text-center fw-bold p-3 rounded-2" href="#">{{$categoria->nombre}}</a>
+                <a class="text-white sombreado text-center fw-bold" href="{{route('verCategoria',$categoria->id)}}">{{$categoria->nombre}}</a> <span class="sombreado text-white h-50">|</span>
             @endforeach
         </div>
         <div class="row">
@@ -44,7 +45,6 @@
                             <div class="col-lg-12">
                                     @foreach ($recetas as $receta)
                                         <?php 
-                                            $categoria=Categoria::find($receta->id_categoria);
                                             $usuario=User::find($receta->id_usuario);
                                             $foto=Foto::find($receta->id_imagen);
                                         ?>

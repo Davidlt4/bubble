@@ -71,6 +71,12 @@ class CategoriaController extends Controller
         return view('categoria.show', compact('categoria'));
     }
 
+    public function verCategoria($id){
+
+        $categoria = Categoria::find($id);
+        return view('categoria.ver_categoria', compact('categoria'));
+    }
+
     /**
      * Show the form for editing the specified resource.
      *

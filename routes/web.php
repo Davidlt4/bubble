@@ -31,6 +31,8 @@ Route::get('/', function () {
 Route::resource('/categorias',CategoriaController::class)->middleware('admin');
 Route::get('categoriasAdmin',[CategoriaController::class,'index'])->name('categoriasAdmin')->middleware('admin');
 
+Route::get('verCategoria/{id}',[CategoriaController::class,'verCategoria'])->name('verCategoria');
+
 //Apartado de fotos
 // Route::resource('/fotos',FotoController::class)->middleware('admin');
 
