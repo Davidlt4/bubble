@@ -22,7 +22,7 @@ use Illuminate\Support\Facades\Route;
 // INICIO
 
 Route::get('/', function () {
-    return view('welcome');
+    return view('receta.index_inicio');
 })->name('inicio');
 
 
@@ -32,7 +32,7 @@ Route::resource('/categorias',CategoriaController::class)->middleware('admin');
 Route::get('categoriasAdmin',[CategoriaController::class,'index'])->name('categoriasAdmin')->middleware('admin');
 
 //Apartado de fotos
-Route::resource('/fotos',FotoController::class)->middleware('admin');
+// Route::resource('/fotos',FotoController::class)->middleware('admin');
 
 Route::get('/galeria', function () {
     return view('foto/galeria')->with('fotos',FotoController::cargarGaleria());

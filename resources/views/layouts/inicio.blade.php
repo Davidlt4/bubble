@@ -141,10 +141,12 @@ https://templatemo.com/tm-579-cyborg-gaming
           <!-- ***** Most Popular Start ***** -->
           <div class="most-popular">
             <div class="row">
+              
               <div class="col-lg-12">
                 <div class="heading-section">
                   <h4><em>Recetas</em> Bubbletea <em>Populares</em></h4>
                 </div>
+
                 <div class="row">
                   <div class="col-lg-3 col-sm-6">
                     <div class="item">
@@ -156,6 +158,7 @@ https://templatemo.com/tm-579-cyborg-gaming
                       </ul>
                     </div>
                   </div>
+                  
                   <div class="col-lg-3 col-sm-6">
                     <div class="item">
                       <img src="assets/images/popular-02.jpg" alt="">

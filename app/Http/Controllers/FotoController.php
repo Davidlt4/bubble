@@ -52,7 +52,7 @@ class FotoController extends Controller
             $guardado=$file->move($rutaDestino,$filename);
 
             $request['nombre']=$filename;
-
+            
             request()->validate(Foto::$rules);
 
             $foto = Foto::create($request->all());
