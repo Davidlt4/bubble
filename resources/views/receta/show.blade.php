@@ -8,9 +8,11 @@
 
     use App\Models\Categoria;
     use App\Models\User;
+    use App\Models\Foto;
 
     $categoria=Categoria::find($receta->id_categoria);
     $usuario=User::find($receta->id_usuario);
+    $foto=Foto::find($receta->id_imagen);
 
 ?>
 
@@ -51,7 +53,7 @@
                         </div>
                         <div class="form-group text-white mb-2">
                             <strong class="sombreado">Imagen</strong><br>
-                            {{ $receta->id_imagen }}
+                            <img class="w-25 h-25 rounded-4" src="/assets/galeria/{{$foto->nombre}}" alt="Foto Receta">
                         </div>
                         <div class="form-group text-white mb-2">
                             <strong class="sombreado">Categoria</strong><br>

@@ -43,12 +43,19 @@ class CategoriaController extends Controller
      */
     public function store(Request $request)
     {
+        $categorias=Categoria::all();
+        foreach($categorias as $cat){
+            if($cat->nombre==$request['nombre']){
+                return redirect()->route('categorias.create')
+                ->with('success', 'Esta categoría ya existe');
+            }
+        }
         request()->validate(Categoria::$rules);
 
         $categoria = Categoria::create($request->all());
 
         return redirect()->route('categorias.index')
-            ->with('success', 'Categoria created successfully.');
+            ->with('success', 'Categoria creada.');
     }
 
     /**
@@ -91,7 +98,7 @@ class CategoriaController extends Controller
         $categoria->update($request->all());
 
         return redirect()->route('categorias.index')
-            ->with('success', 'Categoria updated successfully');
+            ->with('success', 'Categoria actualizada');
     }
 
     /**
@@ -104,7 +111,7 @@ class CategoriaController extends Controller
         $categoria = Categoria::find($id)->delete();
 
         return redirect()->route('categorias.index')
-            ->with('success', 'Categoria deleted successfully');
+            ->with('success', 'Categoria borrada');
     }
 
     public static function getAll(){

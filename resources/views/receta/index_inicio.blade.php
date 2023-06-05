@@ -12,32 +12,25 @@
     use App\Models\Receta;
 
     $recetas=Receta::all();
+    $categorias=Categoria::all();
 
 ?>
 
 @section('content')
     <br><br>
     <div class="container-fluid mb-5">
-        <div class="heading-section">
-            <h4><em>Zona </em> Recetas <em>Administrador</em></h4>
+        <div class="heading-section d-flex justify-content-around mb-5">
+            <!--Categorias-->
+            @foreach($categorias as $categoria)
+                <a class="text-morado bg-white text-center fw-bold p-3 rounded-2" href="#">{{$categoria->nombre}}</a>
+            @endforeach
         </div>
         <div class="row">
             <div class="col-sm-12">
                 <div class="card bg-carbon">
 
                     <div class="card-header">
-                        <div style="display: flex; justify-content: space-between; align-items: center;">
-
-                            <span class="card_title text-white fw-bold">
-                                {{ __('RECETAS') }}
-                            </span>
-
-                             <div class="float-right">
-                                <a href="{{ route('recetas.create') }}" class="btn btn-morado btn-sm float-right fw-bold"  data-placement="left">
-                                  {{ __('CREAR RECETA') }}
-                                </a>
-                              </div>
-                        </div>
+                        <h4>Recetas <span class="text-morado">Populares</span></h4>
                     </div>
 
                     @if ($message = Session::get('success'))

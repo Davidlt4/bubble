@@ -8,6 +8,7 @@
 
     use App\Models\Categoria;
     use App\Models\User;
+    use App\Models\Foto;
 
 ?>
 
@@ -62,17 +63,19 @@
                                 <tbody>
                                     @foreach ($recetas as $receta)
                                         <?php 
+
                                             $categoria=Categoria::find($receta->id_categoria);
                                             $usuario=User::find($receta->id_usuario);
+                                            $foto=Foto::find($receta->id_imagen);
                                         ?>
                                         <tr>
                                             <td class="text-white">{{ $receta->id }}</td>
                                             
 											<td class="text-white">{{ $receta->nombre }}</td>
 											<td class="text-white">{{ $receta->ingredientes }}</td>
-											<td class="text-white">{{ $receta->id_imagen }}</td>
+											<td class="text-white"><img src="assets/galeria/{{$foto->nombre}}" alt="Foto Receta"></td>
 											<td class="text-white">{{ $categoria->nombre }}</td>
-											<td class="text-white">{{ $receta->preparacion }}</td>
+											<td class="text-white w-50">{{ $receta->preparacion }}</td>
 											<td class="text-white w-50">{{ $usuario->email }}</td>
 
                                             <td>

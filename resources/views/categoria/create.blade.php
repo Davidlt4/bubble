@@ -11,10 +11,15 @@
 
                 @includeif('partials.errors')
 
-                <div class="card card-default">
+                <div class="card card-default bg-carbon">
                     <div class="card-header">
-                        <span class="card-title">{{ __('Create') }} Categoria</span>
+                        <span class="card-title text-white fw-bold">{{ __('Crear') }} <span class="text-morado">Categoria</span></span>
                     </div>
+                    @if ($message = Session::get('success'))
+                        <div class="alert alert-success">
+                            <p>{{ $message }}</p>
+                        </div>
+                    @endif
                     <div class="card-body">
                         <form method="POST" action="{{ route('categorias.store') }}"  role="form" enctype="multipart/form-data">
                             @csrf
