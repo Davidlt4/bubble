@@ -21,6 +21,10 @@
         <div class="row">
             <div class="col-sm-12">
 
+                <div class="d-flex justify-content-center">
+                    <h4 class="sombreado"><a class="m-3" href="{{route('misRecetas')}}">MIS RECETAS </a> | <a class="m-3" href="#"> FAVORITOS</a></h4>
+                </div>
+
                 <div class="card bg-carbon mt-5">
 
                     <div class="card-header">

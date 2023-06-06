@@ -1,6 +1,7 @@
 <?php
 
 use App\Http\Controllers\CategoriaController;
+use App\Http\Controllers\FavoritoController;
 use App\Http\Controllers\FotoController;
 use App\Http\Controllers\RecetaController;
 use App\Models\Receta;
@@ -42,8 +43,6 @@ Route::get('/galeria', function () {
 
 Route::get('/subirfoto',[FotoController::class,'create'])->middleware('auth')->name('subirfoto');
 
-
-
 //Apartado de RECETAS
 
 //PARA ADMIN
@@ -69,6 +68,10 @@ Route::get('editRecUsuario/{id}',[RecetaController::class,'edit_usuario'])->name
 Route::patch('updateRecUsuario/{receta}',[RecetaController::class,'update_usuario'])->name('updateRecUsuario')->middleware('auth');
 
 Route::get('verRecetaIni/{id}',[RecetaController::class,'show_inicio'])->name('verRecetaIni');
+
+//Para añadir a FAVORITOS
+
+Route::post('fav',[FavoritoController::class,'fav'])->middleware('auth')->name('fav');
 
 Auth::routes();
 

@@ -72,7 +72,7 @@
                                             <td class="text-white">{{ $receta->id }}</td>
                                             
 											<td class="text-white">{{ $receta->nombre }}</td>
-											<td class="text-white">{{ $receta->ingredientes }}</td>
+											<td class="text-white w-50">{{ $receta->ingredientes }}</td>
 											<td class="text-white"><img src="assets/galeria/{{$foto->nombre}}" alt="Foto Receta"></td>
 											<td class="text-white">{{ $categoria->nombre }}</td>
 											<td class="text-white w-50">{{ $receta->preparacion }}</td>

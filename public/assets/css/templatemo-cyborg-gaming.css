@@ -1606,6 +1606,10 @@ Profile Style
   text-shadow: 0 0 5px  #7A26C1, 0 0 7px #7A26C1;
 }
 
+a:hover{
+  color: #c47dff;
+}
+
 img.zoom {
   width: 100%;
   height: 200px;

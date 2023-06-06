@@ -54,10 +54,15 @@
                                     <div class="col-lg-3 col-sm-6">
                                         <div class="item">
                                             <img src="/assets/galeria/{{$foto->nombre}}" alt="Foto Receta">        
-                                            <h4 class="sombreado">{{$receta->nombre}}<span>{{$usuario->name}}</span></h4>
+                                            <h4 class="sombreado">{{$receta->nombre}}<span>{{$usuario->name}}</span></h4><br>
                                             <a class="btn btn-sm btn-morado mb-2 mt-2 fw-bold" href="{{ route('verRecetaIni',$receta->id) }}">{{ __('VER RECETA') }}</a>
                                             <ul>
-                                                <li><i class="fa fa-star"></i></li>
+                                                <form method="POST" action="{{route('fav')}}" role="form" enctype="multipart/form-data">
+                                                    @csrf
+                                                    {{ Form::hidden('id_usuario',$usuario->id, ['class' => 'form-control' . ($errors->has('id_usuario') ? ' is-invalid' : ''),'value' => null]) }}
+                                                    {{ Form::hidden('id_receta',$receta->id, ['class' => 'form-control' . ($errors->has('id_receta') ? ' is-invalid' : ''),'value' => null]) }}
+                                                    <button type="submit" class="btn btn-morado"><i class="fa fa-star"></i></button>
+                                                </form>
                                             </ul>
                                         </div>
                                     </div>
