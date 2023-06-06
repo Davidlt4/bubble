@@ -68,6 +68,8 @@ Route::delete('deleteRecUsuario/{id}',[RecetaController::class,'destroy_usuario'
 Route::get('editRecUsuario/{id}',[RecetaController::class,'edit_usuario'])->name('editRecUsuario')->middleware('auth');
 Route::patch('updateRecUsuario/{receta}',[RecetaController::class,'update_usuario'])->name('updateRecUsuario')->middleware('auth');
 
+Route::get('verRecetaIni/{id}',[RecetaController::class,'show_inicio'])->name('verRecetaIni');
+
 Auth::routes();
 
 Route::get('/home', [App\Http\Controllers\HomeController::class, 'index'])->name('home');

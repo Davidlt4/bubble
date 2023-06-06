@@ -43,30 +43,28 @@
 
                     <div class="card-body">
                         <div class="row">
-                            <div class="col-lg-12">
-                                    @foreach ($recetas as $receta)
-                                        
-                                        @if($receta->id_categoria==$categoria->id)
+                            @foreach ($recetas as $receta)
+                                
+                                @if($receta->id_categoria==$categoria->id)
 
-                                            <?php 
-                                                $usuario=User::find($receta->id_usuario);
-                                                $foto=Foto::find($receta->id_imagen);
-                                            ?>
-                                            <div class="col-lg-3 col-sm-6">
-                                                <div class="item">
-                                                    <img src="/assets/galeria/{{$foto->nombre}}" alt="Foto Receta">        
-                                                    <h4 class="sombreado">{{$receta->nombre}}<span>{{$usuario->email}}</span></h4>
-                                                    <a class="btn btn-sm btn-morado mb-2 mt-2 fw-bold" href="{{ route('recetas.show',$receta->id) }}"><i class="fa fa-fw fa-eye"></i> {{ __('VER RECETA') }}</a>
-                                                    <ul>
-                                                        <li><i class="fa fa-star"></i> 4.8</li>
-                                                    </ul>
-                                                </div>
-                                            </div>
+                                    <?php 
+                                        $usuario=User::find($receta->id_usuario);
+                                        $foto=Foto::find($receta->id_imagen);
+                                    ?>
+                                    <div class="col-lg-3 col-sm-6">
+                                        <div class="item">
+                                            <img src="/assets/galeria/{{$foto->nombre}}" alt="Foto Receta">        
+                                            <h4 class="sombreado">{{$receta->nombre}}<span>{{$usuario->name}}</span></h4>
+                                            <a class="btn btn-sm btn-morado mb-2 mt-2 fw-bold" href="{{ route('verRecetaIni',$receta->id) }}">{{ __('VER RECETA') }}</a>
+                                            <ul>
+                                                <li><i class="fa fa-star"></i></li>
+                                            </ul>
+                                        </div>
+                                    </div>
 
-                                        @endif
+                                @endif
 
-                                    @endforeach
-                            </div>
+                            @endforeach
                         </div>
                     </div>
 

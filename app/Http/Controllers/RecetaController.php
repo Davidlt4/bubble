@@ -119,6 +119,13 @@ class RecetaController extends Controller
         return view('receta.show', compact('receta'));
     }
 
+    public function show_inicio($id)
+    {
+        $receta = Receta::find($id);
+
+        return view('receta.show_usuario', compact('receta'));
+    }
+
     /**
      * Show the form for editing the specified resource.
      *
