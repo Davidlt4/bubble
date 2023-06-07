@@ -64,12 +64,12 @@ https://templatemo.com/tm-579-cyborg-gaming
                     </a>
                     <!-- ***** Logo End ***** -->
                     <!-- ***** Search End ***** -->
-                    <div class="search-input">
-                      <form id="search" action="#">
-                        <input type="text" placeholder="Buscar..." id='searchText' name="searchKeyword" onkeypress="handle" />
-                        <i class="fa fa-search"></i>
-                      </form>
-                    </div>
+                      <div class="search-input">
+                        <form id="search" action="{{route('buscadorini')}}">
+                          <input type="text" placeholder="Buscar..." id='searchText' name="busqueda" onkeypress="handle" />
+                          <i class="fa fa-search"></i>
+                        </form>
+                      </div>
                     <!-- ***** Search End ***** -->
                     <!-- ***** Menu Start ***** -->
                     <ul class="nav">
@@ -84,6 +84,7 @@ https://templatemo.com/tm-579-cyborg-gaming
                                 <div class="dropdown-menu dropdown-menu-end" aria-labelledby="navbarDropdown">
                                   <a class="dropdown-item text-center text-morado" href="{{route('recetasAdmin')}}">Recetas</a>
                                   <a class="dropdown-item text-center text-morado" href="{{route('categoriasAdmin')}}">Categorias</a>
+                                  <a class="dropdown-item text-center text-morado" href="{{route('fotosAdmin')}}">Fotos</a>
                                 </div>
 
                               </li>

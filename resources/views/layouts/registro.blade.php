@@ -84,6 +84,7 @@ https://templatemo.com/tm-579-cyborg-gaming
                                 <div class="dropdown-menu dropdown-menu-end" aria-labelledby="navbarDropdown">
                                   <a class="dropdown-item text-center text-morado" href="{{route('recetasAdmin')}}">Recetas</a>
                                   <a class="dropdown-item text-center text-morado" href="{{route('categoriasAdmin')}}">Categorias</a>
+                                  <a class="dropdown-item text-center text-morado" href="{{route('fotosAdmin')}}">Fotos</a>
                                 </div>
 
                               </li>
