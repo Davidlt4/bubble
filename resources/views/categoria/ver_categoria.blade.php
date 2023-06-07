@@ -1,4 +1,4 @@
-@extends('layouts.categoria')
+@extends('layouts.receta')
 
 @section('template_title')
     Receta

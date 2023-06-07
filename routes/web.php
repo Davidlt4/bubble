@@ -22,10 +22,12 @@ use Illuminate\Support\Facades\Route;
 
 // INICIO
 
-Route::get('/', function () {
-    return view('receta.index_inicio');
-})->name('inicio');
+// Route::get('/', function () {
+//     return view('receta.index_inicio');
+// })->name('inicio');
 
+Route::get('/',[RecetaController::class,'index_inicio'])->name('inicio');
+Route::get('buscadorini',[RecetaController::class,'index_inicio'])->name('buscadorini');
 
 //Apartado de categorias
 

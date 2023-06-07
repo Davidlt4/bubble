@@ -9,9 +9,7 @@
     use App\Models\Categoria;
     use App\Models\User;
     use App\Models\Foto;
-    use App\Models\Receta;
-
-    $recetas=Receta::all();
+    
     $categorias=Categoria::all();
 
 ?>

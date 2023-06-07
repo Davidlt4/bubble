@@ -33,6 +33,22 @@ class RecetaController extends Controller
             ->with('i', (request()->input('page', 1) - 1) * $recetas->perPage());
     }
 
+    public function index_inicio(Request $request)
+    {
+
+        $busqueda=$request->busqueda;
+
+        $recetas = Receta::where('nombre','LIKE','%'.$busqueda.'%')
+        ->orWhere('nombre','LIKE','%'.$busqueda.'%')
+        ->latest('id')
+        ->paginate();
+
+        // $recetas = Receta::paginate();
+
+        return view('receta.index_inicio', compact('recetas'))
+            ->with('i', (request()->input('page', 1) - 1) * $recetas->perPage());
+    }
+
     /**
      * Show the form for creating a new resource.
      *

@@ -48,7 +48,7 @@ https://templatemo.com/tm-579-cyborg-gaming
                     <!-- ***** Logo End ***** -->
                     <!-- ***** Search End ***** -->
                       <div class="search-input">
-                        <form id="search" action="{{route('buscadorAdmin')}}">
+                        <form id="search" action="{{route('buscadorini')}}">
                           <input type="text" placeholder="Buscar..." id='searchText' name="busqueda" onkeypress="handle" />
                           <i class="fa fa-search"></i>
                         </form>
