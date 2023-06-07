@@ -12,12 +12,12 @@
                     <div class="card-header">
                         <div style="display: flex; justify-content: space-between; align-items: center;">
 
-                            <span id="card_title text-white">
+                            <span class="card_title text-white">
                                 {{ __('Fotos') }}
                             </span>
 
                              <div class="float-right">
-                                <a href="{{ route('fotos.create') }}" class="btn btn-morado fw-bold btn-sm float-right"  data-placement="left">
+                                <a href="{{ route('subirfoto') }}" class="btn btn-morado fw-bold btn-sm float-right"  data-placement="left">
                                   {{ __('SUBIR FOTO A LA GALERÍA') }}
                                 </a>
                               </div>
@@ -33,11 +33,13 @@
                     <div class="card-body">
                         <div class="table-responsive">
                             <table class="table table-striped table-hover">
-                                <thead class="thead">
+                                <thead class="thead sombreado text-white">
                                     <tr>
                                         <th>Id</th>
                                         
 										<th>Nombre</th>
+
+                                        <th>Imagen</th>
 
                                         <th></th>
                                     </tr>
@@ -46,9 +48,13 @@
                                     @foreach ($fotos as $foto)
                                         <tr>
                                             
-                                            <td>{{ $foto->id }}</td>
+                                            <td class="text-white">{{ $foto->id }}</td>
                                             
-											<td>{{ $foto->nombre }}</td>
+											<td class="text-white w-50">{{ $foto->nombre }}</td>
+
+                                            <td class="text-white"><img class="img-fluid" src="assets/galeria/{{$foto->nombre}}" alt="Foto Receta"></td>
+
+                                            <td class="text-white w-50"></td>
 
                                             <td>
                                                 <form action="{{ route('fotos.destroy',$foto->id) }}" method="POST">
