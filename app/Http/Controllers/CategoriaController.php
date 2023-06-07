@@ -16,9 +16,15 @@ class CategoriaController extends Controller
      *
      * @return \Illuminate\Http\Response
      */
-    public function index()
+    public function index(Request $request)
     {
-        $categorias = Categoria::paginate();
+        $busqueda=$request->busqueda;
+
+        $categorias = Categoria::where('nombre','LIKE','%'.$busqueda.'%')
+        ->orWhere('nombre','LIKE','%'.$busqueda.'%')
+        ->latest('id')
+        ->paginate();
+        // $categorias = Categoria::paginate();
 
         return view('categoria.index', compact('categorias'))
             ->with('i', (request()->input('page', 1) - 1) * $categorias->perPage());

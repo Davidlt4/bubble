@@ -1,4 +1,4 @@
-@extends('layouts.receta')
+@extends('layouts.categoria')
 
 @section('template_title')
     {{ __('Create') }} Categoria

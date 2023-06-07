@@ -47,12 +47,12 @@ https://templatemo.com/tm-579-cyborg-gaming
                     </a>
                     <!-- ***** Logo End ***** -->
                     <!-- ***** Search End ***** -->
-                    <div class="search-input">
-                      <form id="search" action="#">
-                        <input type="text" placeholder="Buscar..." id='searchText' name="searchKeyword" onkeypress="handle" />
-                        <i class="fa fa-search"></i>
-                      </form>
-                    </div>
+                      <div class="search-input">
+                        <form id="search" action="{{route('buscadorAdminCat')}}">
+                          <input type="text" placeholder="Buscar..." id='searchText' name="busqueda" onkeypress="handle" />
+                          <i class="fa fa-search"></i>
+                        </form>
+                      </div>
                     <!-- ***** Search End ***** -->
                     <!-- ***** Menu Start ***** -->
                     <ul class="nav">
@@ -77,7 +77,7 @@ https://templatemo.com/tm-579-cyborg-gaming
                           @guest
                               @if (Route::has('login'))
                                   <li class="nav-item">
-                                      <a class="nav-link" href="{{ route('login') }}">{{ __('Iniciar sesión') }}<img src="assets/images/profile-header.png" alt=""></a>
+                                      <a class="nav-link" href="{{ route('login') }}">{{ __('Iniciar sesión') }}<img src="/assets/images/profile-header.png" alt=""></a>
                                   </li>
                               @endif
                               @else
@@ -181,7 +181,6 @@ https://templatemo.com/tm-579-cyborg-gaming
     <!-- Copyright -->
     
   </footer>
-
 
 
   <!-- Scripts -->
