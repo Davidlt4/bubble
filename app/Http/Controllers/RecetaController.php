@@ -17,9 +17,17 @@ class RecetaController extends Controller
      *
      * @return \Illuminate\Http\Response
      */
-    public function index()
+    public function index(Request $request)
     {
-        $recetas = Receta::paginate();
+
+        $busqueda=$request->busqueda;
+
+        $recetas = Receta::where('nombre','LIKE','%'.$busqueda.'%')
+        ->orWhere('nombre','LIKE','%'.$busqueda.'%')
+        ->latest('id')
+        ->paginate();
+
+        // $recetas = Receta::paginate();
 
         return view('receta.index', compact('recetas'))
             ->with('i', (request()->input('page', 1) - 1) * $recetas->perPage());

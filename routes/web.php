@@ -48,6 +48,7 @@ Route::get('/subirfoto',[FotoController::class,'create'])->middleware('auth')->n
 //PARA ADMIN
 
 Route::resource('/recetas',RecetaController::class)->middleware('admin');
+Route::get('buscadorAdmin',[RecetaController::class,'index'])->middleware('admin')->name('buscadorAdmin');
 
 Route::get('recetasAdmin',[RecetaController::class,'index'])->name('recetasAdmin')->middleware('admin');
 
