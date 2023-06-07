@@ -57,12 +57,12 @@ class FotoController extends Controller
 
             $foto = Foto::create($request->all());
 
-            return redirect()->route('fotos.create')
+            return redirect()->route('subirfoto')
                 ->with('success', 'Foto subida correctamente a la galería.');
 
         }else{
             
-            return redirect()->route('fotos.create')
+            return redirect()->route('subirfoto')
             ->with('success','Por favor seleccione una foto');
         }
 
@@ -109,7 +109,7 @@ class FotoController extends Controller
         $foto->update($request->all());
 
         return redirect()->route('fotos.index')
-            ->with('success', 'Foto updated successfully');
+            ->with('success', 'Foto actualizada');
     }
 
     /**
@@ -122,7 +122,7 @@ class FotoController extends Controller
         $foto = Foto::find($id)->delete();
 
         return redirect()->route('fotos.index')
-            ->with('success', 'Foto deleted successfully');
+            ->with('success', 'Foto borrada');
     }
 
     public static function cargarGaleria(){

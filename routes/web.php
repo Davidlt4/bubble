@@ -42,10 +42,13 @@ Route::get('/galeria', function () {
 })->name('galeria');
 
 Route::get('/subirfoto',[FotoController::class,'create'])->middleware('auth')->name('subirfoto');
+
 Route::get('fotos.edit/{id}',[FotoController::class,'edit'])->middleware('admin')->name('fotos.edit');
 Route::get('fotos.index',[FotoController::class,'index'])->middleware('admin')->name('fotos.index');
 Route::patch('fotos.update/{id}',[FotoController::class,'update'])->middleware('admin')->name('fotos.update');
 Route::delete('fotos.destroy/{id}',[FotoController::class,'destroy'])->middleware('admin')->name('fotos.destroy');
+
+Route::post('fotos.store',[RecetaController::class,'store'])->name('fotos.store')->middleware('auth');
 
 //Apartado de RECETAS
 
