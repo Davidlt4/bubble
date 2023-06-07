@@ -56,7 +56,7 @@ https://templatemo.com/tm-579-cyborg-gaming
                     <!-- ***** Search End ***** -->
                     <!-- ***** Menu Start ***** -->
                     <ul class="nav">
-                        <li><a href="index.html">Recetas</a></li>
+                        <li><a href="{{route('inicio')}}">Recetas</a></li>
                         <li><a href="{{route('galeria')}}">Galería</a></li>
                         @if(Auth::check())
                            @if(Auth::user()->role=='1')
@@ -133,7 +133,7 @@ https://templatemo.com/tm-579-cyborg-gaming
     </div>
   </div>
   
-  <footer>
+  <!-- <footer>
     <div class="container">
       <div class="row">
         <div class="col-lg-12">
@@ -141,6 +141,45 @@ https://templatemo.com/tm-579-cyborg-gaming
         </div>
       </div>
     </div>
+  </footer> -->
+
+  <footer class="bg-carbon text-center text-white">
+    <!-- Grid container -->
+    <div class="container p-0 pb-0">
+      <!-- Section: Social media -->
+      <section class="mb-4">
+  
+        <!-- Twitter -->
+        <a class="btn btn-outline-light btn-floating mt-4 m-1" href="#!" role="button"
+          ><i class="fab fa-twitter"></i
+        ></a>
+
+        <!-- Instagram -->
+        <a class="btn btn-outline-light btn-floating mt-4 m-1" href="#!" role="button"
+          ><i class="fab fa-instagram"></i
+        ></a>
+
+        <!-- Linkedin -->
+        <a class="btn btn-outline-light btn-floating mt-4 m-1" href="#!" role="button"
+          ><i class="fab fa-linkedin-in"></i
+        ></a>
+
+        <!-- Github -->
+        <a class="btn btn-outline-light btn-floating mt-4 m-1" href="#!" role="button"
+          ><i class="fab fa-github"></i
+        ></a>
+
+      </section>
+      <!-- Section: Social media -->
+    </div>
+    <!-- Grid container -->
+
+    <!-- Copyright -->
+    <div class="text-center p-3" style="background-color: rgba(0, 0, 0, 0.2);">
+      <p class="text-white">Copyright © 2023 <br> Todos los derechos reservados a Bubbletea&Coffee DIY.</p>
+    </div>
+    <!-- Copyright -->
+    
   </footer>
 
 

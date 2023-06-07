@@ -72,6 +72,11 @@ Route::get('verRecetaIni/{id}',[RecetaController::class,'show_inicio'])->name('v
 //Para añadir a FAVORITOS
 
 Route::post('fav',[FavoritoController::class,'fav'])->middleware('auth')->name('fav');
+Route::delete('delfav/{id}',[FavoritoController::class,'delfav'])->middleware('auth')->name('delfav');
+
+Route::get('/misFavoritos', function () {
+    return view('favorito/index_fav');
+})->name('misFavoritos')->middleware('auth');
 
 Auth::routes();
 

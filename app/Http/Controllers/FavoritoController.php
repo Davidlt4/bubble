@@ -125,4 +125,13 @@ class FavoritoController extends Controller
         return redirect()->route('favoritos.index')
             ->with('success', 'Favorito deleted successfully');
     }
+
+    public function delfav($id)
+    {
+        $favorito = Favorito::find($id)->delete();
+
+        return redirect()->route('misFavoritos')
+            ->with('success', 'Receta eliminada de favoritos');
+    }
+
 }

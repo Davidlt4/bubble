@@ -59,8 +59,8 @@
                                             <ul>
                                                 <form method="POST" action="{{route('fav')}}" role="form" enctype="multipart/form-data">
                                                     @csrf
-                                                    {{ Form::hidden('id_usuario',$usuario->id, ['class' => 'form-control' . ($errors->has('id_usuario') ? ' is-invalid' : ''),'value' => null]) }}
-                                                    {{ Form::hidden('id_receta',$receta->id, ['class' => 'form-control' . ($errors->has('id_receta') ? ' is-invalid' : ''),'value' => null]) }}
+                                                    {{ Form::hidden('id_usuario',Auth::id(), ['class' => 'form-control' . ($errors->has('id_usuario') ? ' is-invalid' : ''),'value' => Auth::id()]) }}
+                                                    {{ Form::hidden('id_receta',$receta->id, ['class' => 'form-control' . ($errors->has('id_receta') ? ' is-invalid' : ''),'value' => $receta->id]) }}
                                                     <button type="submit" class="btn btn-morado"><i class="fa fa-star"></i></button>
                                                 </form>
                                             </ul>

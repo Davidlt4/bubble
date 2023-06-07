@@ -60,7 +60,7 @@ https://templatemo.com/tm-579-cyborg-gaming
                     <!-- ***** Search End ***** -->
                     <!-- ***** Menu Start ***** -->
                     <ul class="nav">
-                        <li><a href="index.html">Recetas</a></li>
+                        <li><a href="{{route('inicio')}}">Recetas</a></li>
                         <li><a href="{{route('galeria')}}">Galería</a></li>
                         @if(Auth::check())
                            @if(Auth::user()->role=='1')
