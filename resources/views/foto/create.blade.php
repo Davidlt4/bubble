@@ -19,7 +19,7 @@
                             <span class="card-title text-white fw-bold">{{ __('Subir') }} <span class="text-morado">Foto</span>
                         </div>
                         <div class="float-right">
-                            <a class="btn btn-morado fw-bold" href="{{ route('galeria') }}"> {{ __('Volver') }}</a>
+                            <a class="btn btn-morado fw-bold" href="{{ route('galeria') }}"> {{ __('Volver a la galería') }}</a>
                         </div>
                     </div>
 

@@ -48,7 +48,7 @@ Route::get('fotos.index',[FotoController::class,'index'])->middleware('admin')->
 Route::patch('fotos.update/{id}',[FotoController::class,'update'])->middleware('admin')->name('fotos.update');
 Route::delete('fotos.destroy/{id}',[FotoController::class,'destroy'])->middleware('admin')->name('fotos.destroy');
 
-Route::post('fotos.store',[RecetaController::class,'store'])->name('fotos.store')->middleware('auth');
+Route::post('fotos.store',[FotoController::class,'store'])->name('fotos.store')->middleware('auth');
 
 //Apartado de RECETAS
 

@@ -57,13 +57,10 @@ class FotoController extends Controller
 
             $foto = Foto::create($request->all());
 
-            return redirect()->route('subirfoto')
-                ->with('success', 'Foto subida correctamente a la galería.');
+            return redirect()->route('subirfoto')->with('success','Foto subida correctamente');
 
-        }else{
-            
-            return redirect()->route('subirfoto')
-            ->with('success','Por favor seleccione una foto');
+        }else{  
+            return redirect()->route('subirfoto')->with('success','Por favor seleccione una foto');
         }
 
         
