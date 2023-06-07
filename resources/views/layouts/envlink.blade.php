@@ -155,22 +155,22 @@ https://templatemo.com/tm-579-cyborg-gaming
       <section class="mb-4">
   
         <!-- Twitter -->
-        <a class="btn btn-outline-light btn-floating mt-4 m-1" href="#!" role="button"
+        <a class="btn btn-outline-light btn-floating mt-4 m-1" href="https://twitter.com/?lang=es" role="button"
           ><i class="fab fa-twitter"></i
         ></a>
 
         <!-- Instagram -->
-        <a class="btn btn-outline-light btn-floating mt-4 m-1" href="#!" role="button"
+        <a class="btn btn-outline-light btn-floating mt-4 m-1" href="https://www.instagram.com/" role="button"
           ><i class="fab fa-instagram"></i
         ></a>
 
         <!-- Linkedin -->
-        <a class="btn btn-outline-light btn-floating mt-4 m-1" href="#!" role="button"
+        <a class="btn btn-outline-light btn-floating mt-4 m-1" href="https://www.linkedin.com/in/david-l%C3%B3pez-tapias-a02649239/" role="button"
           ><i class="fab fa-linkedin-in"></i
         ></a>
 
         <!-- Github -->
-        <a class="btn btn-outline-light btn-floating mt-4 m-1" href="#!" role="button"
+        <a class="btn btn-outline-light btn-floating mt-4 m-1" href="https://github.com/Davidlt4" role="button"
           ><i class="fab fa-github"></i
         ></a>
 
