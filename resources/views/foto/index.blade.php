@@ -1,11 +1,15 @@
-@extends('layouts.receta')
+@extends('layouts.foto')
 
 @section('template_title')
     Foto
 @endsection
 
 @section('content')
-    <div class="container-fluid">
+    <br><br>
+    <div class="container-fluid mt-4">
+        <div class="heading-section">
+            <h4><em>Zona </em> Fotos <em>Administrador</em></h4>
+        </div>
         <div class="row">
             <div class="col-sm-12">
                 <div class="card bg-carbon">

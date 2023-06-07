@@ -34,8 +34,10 @@ Route::get('categoriasAdmin',[CategoriaController::class,'index'])->name('catego
 
 Route::get('verCategoria/{id}',[CategoriaController::class,'verCategoria'])->name('verCategoria');
 
-//Apartado de fotos
-// Route::resource('/fotos',FotoController::class)->middleware('admin');
+//Apartado de FOTOS
+
+Route::get('buscadorfoto',[FotoController::class,'index'])->middleware('admin')->name('buscadorfoto');
+Route::get('fotosAdmin',[FotoController::class,'index'])->middleware('admin')->name('fotosAdmin');
 
 Route::get('/galeria', function () {
     return view('foto/galeria')->with('fotos',FotoController::cargarGaleria());
@@ -80,7 +82,6 @@ Route::get('verRecetaIni/{id}',[RecetaController::class,'show_inicio'])->name('v
 
 //Para añadir a FAVORITOS
 
-Route::get('fotosAdmin',[FotoController::class,'index'])->middleware('admin')->name('fotosAdmin');
 Route::post('fav',[FavoritoController::class,'fav'])->middleware('auth')->name('fav');
 Route::delete('delfav/{id}',[FavoritoController::class,'delfav'])->middleware('auth')->name('delfav');
 

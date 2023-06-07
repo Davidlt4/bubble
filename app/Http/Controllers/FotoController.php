@@ -16,9 +16,15 @@ class FotoController extends Controller
      *
      * @return \Illuminate\Http\Response
      */
-    public function index()
+    public function index(Request $request)
     {
-        $fotos = Foto::paginate();
+        $busqueda=$request->busqueda;
+
+        $fotos = Foto::where('nombre','LIKE','%'.$busqueda.'%')
+        ->orWhere('nombre','LIKE','%'.$busqueda.'%')
+        ->latest('id')
+        ->paginate();
+        // $fotos = Foto::paginate();
 
         return view('foto.index', compact('fotos'))
             ->with('i', (request()->input('page', 1) - 1) * $fotos->perPage());
