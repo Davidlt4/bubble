@@ -71,6 +71,7 @@ Route::get('verRecetaIni/{id}',[RecetaController::class,'show_inicio'])->name('v
 
 //Para añadir a FAVORITOS
 
+Route::get('fotosAdmin',[FotoController::class,'index'])->middleware('admin')->name('fotosAdmin');
 Route::post('fav',[FavoritoController::class,'fav'])->middleware('auth')->name('fav');
 Route::delete('delfav/{id}',[FavoritoController::class,'delfav'])->middleware('auth')->name('delfav');
 
