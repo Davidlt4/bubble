@@ -90,22 +90,25 @@ class RecetaController extends Controller
 
             $request['id_imagen']=$foto->id;
 
+            $this->validate($request,[
+
+                'nombre' => 'required|string|max:60|regex:/[A-Za-z]+$/',
+                'preparacion' => 'required|string|regex:/[A-Za-z0-9]+$/',
+                'imagen' => 'required|image|mimes:jpeg,png,jpg,svg|max:2048',
+    
+            ]);
+    
+            // request()->validate(Receta::$rules);
+    
+            $receta = Receta::create($request->all());
+    
+            return redirect()->route('recetas.index')
+                ->with('success', 'Receta creada');
+
+        }else{
+            return redirect()->route('recetas.create')
+            ->with('success', 'Por favor selecciona una imagen');
         }
-
-        $this->validate($request,[
-
-            'nombre' => 'required|string|max:60|regex:/[A-Za-z]+$/',
-            'preparacion' => 'required|string|regex:/[A-Za-z0-9]+$/',
-            'imagen' => 'required|image|mimes:jpeg,png,jpg,svg|max:2048',
-
-        ]);
-
-        // request()->validate(Receta::$rules);
-
-        $receta = Receta::create($request->all());
-
-        return redirect()->route('recetas.index')
-            ->with('success', 'Receta creada');
         
     }
 
@@ -127,20 +130,23 @@ class RecetaController extends Controller
 
             $request['id_imagen']=$foto->id;
 
-        }
+            $this->validate($request,[
 
-        $this->validate($request,[
+                'nombre' => 'required|string|max:60|regex:/[A-Za-z]+$/',
+                'preparacion' => 'required|string|regex:/[A-Za-z]+$/',
+            ]);
+    
+            // request()->validate(Receta::$rules);
+    
+            $receta = Receta::create($request->all());
+    
+            return redirect()->route('misRecetas')
+                ->with('success', 'Receta creada');
 
-            'nombre' => 'required|string|max:60|regex:/[A-Za-z]+$/',
-            'preparacion' => 'required|string|regex:/[A-Za-z]+$/',
-        ]);
-
-        // request()->validate(Receta::$rules);
-
-        $receta = Receta::create($request->all());
-
-        return redirect()->route('misRecetas')
-            ->with('success', 'Receta creada');
+        }else{
+            return redirect()->route('crearReceta')
+            ->with('success', 'Por favor selecciona una imagen');
+        } 
         
     }
 
