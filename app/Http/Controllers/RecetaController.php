@@ -92,7 +92,15 @@ class RecetaController extends Controller
 
         }
 
-        request()->validate(Receta::$rules);
+        $this->validate($request,[
+
+            'nombre' => 'required|string|max:60|regex:/[A-Za-z]+$/',
+            'preparacion' => 'required|string|regex:/[A-Za-z0-9]+$/',
+            'imagen' => 'required|image|mimes:jpeg,png,jpg,svg|max:2048',
+
+        ]);
+
+        // request()->validate(Receta::$rules);
 
         $receta = Receta::create($request->all());
 
@@ -121,7 +129,13 @@ class RecetaController extends Controller
 
         }
 
-        request()->validate(Receta::$rules);
+        $this->validate($request,[
+
+            'nombre' => 'required|string|max:60|regex:/[A-Za-z]+$/',
+            'preparacion' => 'required|string|regex:/[A-Za-z]+$/',
+        ]);
+
+        // request()->validate(Receta::$rules);
 
         $receta = Receta::create($request->all());
 
