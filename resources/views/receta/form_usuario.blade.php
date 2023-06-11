@@ -19,7 +19,7 @@
             {{ Form::text('ingredientes', $receta->ingredientes, ['class' => 'form-control' . ($errors->has('ingredientes') ? ' is-invalid' : ''), 'placeholder' => 'Ingredientes']) }}
             {!! $errors->first('ingredientes', '<div class="invalid-feedback">:message</div>') !!}
         </div><br>
-        <div class="form-group text-white mb-3">
+        <div class="form-group text-white mb-3 overflow-hidden">
             {{ Form::label('Imagen') }}
             {{Form::file('imagen')}}
         </div><br>
@@ -33,7 +33,7 @@
         </div>
         <div class="form-group text-white mb-3">
             {{ Form::label('preparacion') }}
-            {{ Form::text('preparacion', $receta->preparacion, ['class' => 'form-control' . ($errors->has('preparacion') ? ' is-invalid' : ''), 'placeholder' => 'Preparacion']) }}
+            {{ Form::textarea('preparacion', $receta->preparacion, ['class' => 'form-control' . ($errors->has('preparacion') ? ' is-invalid' : ''), 'placeholder' => 'Preparacion']) }}
             {!! $errors->first('preparacion', '<div class="invalid-feedback">:message</div>') !!}
         </div>
         <div class="form-group text-white ">

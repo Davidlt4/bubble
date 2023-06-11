@@ -7,18 +7,14 @@
     <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
 
     <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@100;200;300;400;500;600;700;800;900&display=swap" rel="stylesheet">
-    <link rel="preload" as="style" href="https://bubble-production.up.railway.app/build/assets/app-3ea8b221.css" />
-    <link rel="modulepreload" href="https://bubble-production.up.railway.app/build/assets/app-d4b42df8.js" />
-    <link rel="stylesheet" href="https://bubble-production.up.railway.app/build/assets/app-3ea8b221.css" />
-    <script type="module" src="https://bubble-production.up.railway.app/build/assets/app-d4b42df8.js"></script>
     <link href="vendor/bootstrap/css/bootstrap.min.css" rel="stylesheet">
 
     <title>Bubbletea&Coffee</title>
-    <link rel="icon" href="assets/images/favicon.png" type="image/png" />
+    <link rel="icon" href="/assets/images/favicon.png" type="image/png" />
 
     <!-- Bootstrap core CSS -->
     @vite(['resources/sass/app.scss', 'resources/js/app.js'])
-    <link href="vendor/bootstrap/css/bootstrap.min.css" rel="stylesheet">
+    <link href="/vendor/bootstrap/css/bootstrap.min.css" rel="stylesheet">
 
 
     <!-- Additional CSS Files -->
@@ -51,12 +47,12 @@ https://templatemo.com/tm-579-cyborg-gaming
                     </a>
                     <!-- ***** Logo End ***** -->
                     <!-- ***** Search End ***** -->
-                    <div class="search-input">
-                      <form id="search" action="#">
-                        <input type="text" placeholder="Buscar..." id='searchText' name="searchKeyword" onkeypress="handle" />
-                        <i class="fa fa-search"></i>
-                      </form>
-                    </div>
+                      <div class="search-input">
+                        <form id="search" action="{{route('buscadorini')}}">
+                          <input type="text" placeholder="Buscar..." id='searchText' name="busqueda" onkeypress="handle" />
+                          <i class="fa fa-search"></i>
+                        </form>
+                      </div>
                     <!-- ***** Search End ***** -->
                     <!-- ***** Menu Start ***** -->
                     <ul class="nav">
@@ -117,7 +113,7 @@ https://templatemo.com/tm-579-cyborg-gaming
             </div>
         </div>
     </div>
-  </header><br><br>
+  </header>
   <!-- ***** Header Area End ***** -->
 
   <div class="container">
@@ -126,7 +122,7 @@ https://templatemo.com/tm-579-cyborg-gaming
 
         <!-- ***** Most Popular Start ***** -->
         <div class="most-popular">
-          <div class="row mt-5">
+          <div class="row mt-1">
             <div class="col-lg-12">
               @yield('content')
             </div>
@@ -188,17 +184,16 @@ https://templatemo.com/tm-579-cyborg-gaming
   </footer>
 
 
-
   <!-- Scripts -->
   <!-- Bootstrap core JavaScript -->
   <script src="vendor/jquery/jquery.min.js"></script>
   <script src="vendor/bootstrap/js/bootstrap.min.js"></script>
 
-  <script src="assets/js/isotope.min.js"></script>
-  <script src="assets/js/owl-carousel.js"></script>
-  <script src="assets/js/tabs.js"></script>
-  <script src="assets/js/popup.js"></script>
-  <script src="assets/js/custom.js"></script>
+  <script src="/assets/js/isotope.min.js"></script>
+  <script src="/assets/js/owl-carousel.js"></script>
+  <script src="/assets/js/tabs.js"></script>
+  <script src="/assets/js/popup.js"></script>
+  <script src="/assets/js/custom.js"></script>
 
 
   </body>

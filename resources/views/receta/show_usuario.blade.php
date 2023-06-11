@@ -1,4 +1,4 @@
-@extends('layouts.receta')
+@extends('layouts.ver_receta')
 
 @section('template_title')
     {{ $receta->nombre  ?? "Vista Receta" }}

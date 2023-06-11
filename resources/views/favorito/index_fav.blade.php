@@ -33,8 +33,8 @@
         <div class="row">
             <div class="col-sm-12">
 
-                <div class="d-flex justify-content-center">
-                    <h4 class="sombreado"><a class="m-3" href="{{route('misRecetas')}}">MIS RECETAS </a> | <a class="m-3" href="{{route('misFavoritos')}}"> FAVORITOS</a></h4>
+                <div class="h4 d-flex justify-content-center ">
+                    <h4 class="sombreado"><a class="m-3 enlace" href="{{route('misRecetas')}}">MIS RECETAS </a> | <a class="m-3 enlace" href="{{route('misFavoritos')}}"> FAVORITOS</a></h4>
                 </div>
 
                 <div class="card bg-carbon mt-5">
@@ -42,8 +42,8 @@
                     <div class="card-header">
                         <div style="display: flex; justify-content: space-between; align-items: center;">
 
-                            <span class="card_title text-white fw-bold">
-                                MIS <span class="text-morado"> RECETAS</span>
+                            <span class="card_title text-white fw-bold m-3">
+                                MIS <span class="text-morado"> FAVORITOS</span>
                             </span>
 
                              <div class="float-right">
@@ -69,13 +69,18 @@
                                 $count++; 
                             ?>
                             <div class="card mb-3 bg-carbon border border-2 border-white">
-                                <div class="row row-cols-3">
+                                <div class="row">
 
-                                    <div class="col-md-4">
-                                        <img src="assets/galeria/{{$foto->nombre}}" class="img-fluid rounded-start" alt="Foto Receta">        
+                                    <div class="col-sm-6">
+                                        @if($foto!=null)
+                                            <img src="assets/galeria/{{$foto->nombre}}" class="img-fluid rounded-start" alt="Foto Receta">  
+                                        @else
+                                            <img src="assets/images/logo.png" alt="Foto Receta">
+                                        @endif 
+                                        {{-- <img src="assets/galeria/{{$foto->nombre}}" class="img-fluid rounded-start" alt="Foto Receta"> --}}
                                     </div>
 
-                                    <div class="col-md-8">
+                                    <div class="col-sm-6">
                                         <div class="card-body">
 
                                             <h3 class="sombreado text-white fw-bold mb-4">{{$receta->nombre}}</h3>

@@ -21,7 +21,7 @@
             <!--Categorias-->
             <span class="sombreado text-white h-50">|</span>
             @foreach($categorias as $categoria)
-                <a class="text-white sombreado text-center fw-bold" href="{{route('verCategoria',$categoria->id)}}">{{$categoria->nombre}}</a> <span class="sombreado text-white h-50">|</span>
+                <a class="text-white enlace sombreado text-center fw-bold" href="{{route('verCategoria',$categoria->id)}}">{{$categoria->nombre}}</a> <span class="sombreado text-white h-50">|</span>
             @endforeach
         </div>
         <div class="row">
@@ -48,7 +48,11 @@
                                 ?>
                                 <div class="col-lg-3 col-sm-6">
                                     <div class="item">
-                                        <img src="assets/galeria/{{$foto->nombre}}" alt="Foto Receta">        
+                                        @if($foto!=null)
+                                            <img src="assets/galeria/{{$foto->nombre}}" alt="Foto Receta">
+                                        @else
+                                            <img src="assets/images/logo.png" alt="Foto Receta">
+                                        @endif        
                                         <h4 class="sombreado">{{$receta->nombre}}<span>{{$usuario->name}}</span></h4><br>
                                         <a class="btn btn-sm btn-morado mb-2 mt-2 fw-bold" href="{{ route('verRecetaIni',$receta->id) }}">{{ __('VER RECETA') }}</a>
             

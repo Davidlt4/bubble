@@ -56,7 +56,12 @@ class CategoriaController extends Controller
                 ->with('success', 'Esta categoría ya existe');
             }
         }
-        request()->validate(Categoria::$rules);
+
+        $this->validate($request,[
+            'nombre' => 'required|string|max:60|regex:/[A-Za-z]+$/'
+        ]);
+        
+        // request()->validate(Categoria::$rules);
 
         $categoria = Categoria::create($request->all());
 

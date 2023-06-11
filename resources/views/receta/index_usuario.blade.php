@@ -22,7 +22,7 @@
             <div class="col-sm-12">
 
                 <div class="d-flex justify-content-center">
-                    <h4 class="sombreado"><a class="m-3" href="{{route('misRecetas')}}">MIS RECETAS </a> | <a class="m-3" href="{{route('misFavoritos')}}"> FAVORITOS</a></h4>
+                    <h4 class="sombreado"><a class="m-3 enlace" href="{{route('misRecetas')}}">MIS RECETAS </a> | <a class="m-3 enlace" href="{{route('misFavoritos')}}"> FAVORITOS</a></h4>
                 </div>
 
                 <div class="card bg-carbon mt-5">
@@ -30,7 +30,7 @@
                     <div class="card-header">
                         <div style="display: flex; justify-content: space-between; align-items: center;">
 
-                            <span class="card_title text-white fw-bold">
+                            <span class="card_title text-white fw-bold m-3">
                                 MIS <span class="text-morado"> RECETAS</span>
                             </span>
 
@@ -52,19 +52,23 @@
         
                         @foreach ($recetas as $receta)
                             @if($receta->id_usuario==Auth::id())
-                                <?php $count++; ?>
+                                <?php 
+                                    $foto=Foto::find($receta->id_imagen);
+                                    $count++; 
+                                ?>
                                 <div class="card mb-3 bg-carbon border border-2 border-white">
-                                    <div class="row row-cols-3">
+                                    <div class="row">
 
-                                        <div class="col-md-4">
-                                            @foreach($fotos as $foto)
-                                                @if($foto->id==$receta->id_imagen)
-                                                    <img src="assets/galeria/{{$foto->nombre}}" class="img-fluid rounded-start" alt="Foto Receta">        
-                                                @endif
-                                            @endforeach
+                                        <div class="col-sm-6">
+                                            {{-- <img src="assets/galeria/{{$foto->nombre}}" class="img-fluid rounded-start" alt="Foto Receta"> --}}
+                                            @if($foto!=null)
+                                                <img src="assets/galeria/{{$foto->nombre}}" class="img-fluid rounded-start" alt="Foto Receta">
+                                            @else
+                                                <img src="assets/images/logo.png" alt="Foto Receta">
+                                            @endif 
                                         </div>
 
-                                        <div class="col-md-8">
+                                        <div class="col-sm-6">
                                             <div class="card-body">
 
                                                 <h3 class="sombreado text-white fw-bold mb-4">{{$receta->nombre}}</h3>

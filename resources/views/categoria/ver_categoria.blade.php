@@ -1,4 +1,4 @@
-@extends('layouts.receta')
+@extends('layouts.ver_receta')
 
 @section('template_title')
     Receta
@@ -23,7 +23,7 @@
             <!--Categorias-->
             <span class="sombreado text-white h-50">|</span>
             @foreach($categorias as $cat)
-                <a class="text-white sombreado text-center fw-bold" href="{{route('verCategoria',$cat->id)}}">{{$cat->nombre}}</a>
+                <a class="text-white sombreado enlace text-center fw-bold" href="{{route('verCategoria',$cat->id)}}">{{$cat->nombre}}</a>
                 <span class="sombreado text-white h-50">|</span>
             @endforeach
         </div>

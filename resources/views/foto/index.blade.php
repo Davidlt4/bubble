@@ -62,7 +62,7 @@
 
                                             <td>
                                                 <form action="{{ route('fotos.destroy',$foto->id) }}" method="POST">
-                                                    <a class="btn btn-sm btn-light text-morado fw-bold" href="{{ route('fotos.edit',$foto->id) }}"><i class="fa fa-fw fa-edit"></i> {{ __('Editar') }}</a>
+                                                    <a class="btn btn-sm btn-light text-morado fw-bold mb-2" href="{{ route('fotos.edit',$foto->id) }}"><i class="fa fa-fw fa-edit"></i> {{ __('Editar') }}</a>
                                                     @csrf
                                                     @method('DELETE')
                                                     <button type="submit" class="btn btn-danger btn-sm fw-bold"><i class="fa fa-fw fa-trash"></i> {{ __('Borrar') }}</button>

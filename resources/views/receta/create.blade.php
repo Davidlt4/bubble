@@ -21,6 +21,11 @@
                     <div class="card-header">
                         <span class="card-title text-white fw-bold">{{ __('CREANDO') }} <span class="text-morado">RECETA</span></span>
                     </div>
+                    @if ($message = Session::get('success'))
+                        <div class="alert alert-success">
+                            <p>{{ $message }}</p>
+                        </div>
+                    @endif
                     <div class="card-body">
                         <form method="POST" action="{{ route('recetas.store') }}"  role="form" enctype="multipart/form-data">
                             @csrf
